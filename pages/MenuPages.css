@@ -1,0 +1,22 @@
+.MenuPages{
+    /* display: flex;
+    justify-content: center; */
+    /* text-align: center; */
+    font-size: 20px;
+    font-weight: bold;
+    list-style-type: none;
+
+}
+.MenuPages .PageLink{
+    /* display: inline; */
+    text-decoration: none;
+    padding: 10px;
+    color: #fff
+}
+
+.ActivePageLink {
+    background: #357A10;
+    /* border: 1px solid #dbdbdb; */
+    border-radius: 5px;
+
+}

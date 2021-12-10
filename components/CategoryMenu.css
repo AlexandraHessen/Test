@@ -1,0 +1,18 @@
+.CategoryMenu{
+    /* background: rgba(255, 255, 255, 0.3); */
+    list-style-type: none;
+    max-width: 300px
+    /* width: 25%; */
+}
+
+.CategoryMenu li {
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    padding: 8px;
+    font-weight: bold;
+}
+
+.CategoryMenu a {
+    color: #fff;
+    text-decoration: none
+}

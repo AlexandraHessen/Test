@@ -1,0 +1,58 @@
+.Footer{
+    /* position:absolute;
+    bottom:0; */
+    display: flex;
+    justify-content: center;
+    /* border-top: 1px solid #afafaf; */
+    width: 100%;
+    color: #0a1006;
+    font-size: 13px;
+
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.Footer div{
+    padding: 0 20px;
+}
+
+.Footer h3{
+    padding: 10px 0;
+}
+
+.Footer .MenuPages{
+    font-size: 13px;
+    
+
+}
+
+.Footer .PageLink{
+    font-size: 13px;
+    padding: 0;
+    color: #0a1006;
+}
+
+.Footer .CategoryMenu{
+    background: none;
+
+    
+}
+
+.Footer .CategoryMenu li{
+    padding: 0;
+    border: none;
+}
+
+.Footer .CategoryMenu a {
+    color: #0a1006;
+}
+
+.Footer .CategoryMenu{
+    background: none;
+
+    
+}
+
+.Footer  .ActivePageLink{
+    background: none;
+}

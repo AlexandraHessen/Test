@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+}
+
+html, body {
+    min-height: 100vh;
+    font-family: 'PT Sans',sans-serif;
+}
+.MainPage{
+    min-height: 100vh;
+    background: url('../img/2.jpg') no-repeat;
+    background-size: cover;
+    color: #fff;
+    margin: 0;
+    padding: 0
+}
+
+.MainPage .Main_Container{
+    display: flex;
+    font-family: 'Rubik', sans-serif;
+    /* flex-wrap: wrap; */
+    max-width: 1400px;
+    min-height: 700px;
+    margin: 20px auto 20px;
+    
+}
+
+.MainPage .Main_Container h1,h3{
+    color:#357A10;
+}
+
+.MainPage .Content{
+    width: 90%;
+    margin: 0 40px 40px;
+
+    color: #363636;
+}

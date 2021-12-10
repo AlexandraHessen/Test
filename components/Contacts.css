@@ -1,0 +1,10 @@
+.Contacts{
+    /* display: flex;
+    flex-direction: column; */
+    font-weight: bold;
+
+}
+
+.Contacts li{
+    list-style-type: none;
+}
