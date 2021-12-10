@@ -19,7 +19,7 @@ class RouterPages extends React.Component {
         {/* component={MainPage} */}
         {/* <Route path="/catalog" exact component={CatalogPage} /> */}
         <Route path="/catalog/:pageNumber" exact component={CatalogPage} />
-        <Route path="/catalog/:productId" exact component={PlantInfo} />
+        <Route path="/catalog/:pageNumber/:productId" exact component={PlantInfo} />
 
         {/* <Route path="/catalog/:pageNumber" exact component={CatalogPage} /> ПАГИНАЦИЯ */}
         {/* <Route path="/catalog/:category" exact component={CatalogPage} /> */}

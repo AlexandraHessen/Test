@@ -37,7 +37,7 @@ class Catalog extends React.PureComponent{
         // какие элементы отображать на 1 странице 
 
         let plantsArrCode=objsPlantOnOnePage.map( plant=>
-            <PlantCard key={plant.code} info={plant} />
+            <PlantCard key={plant.code} info={plant} pageNumber={pageNumber}/>
             )
 
         // let plantsArrCode=this.props.plantsArr.map( plant=>
