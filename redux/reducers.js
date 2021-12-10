@@ -1,4 +1,5 @@
-﻿import { combineReducers } from 'redux';
+﻿// ---------------- ОПИСЫВАЕМ КАКИЕ У НАС БУДУТ REDUCERS И ОБЪЕДИНЯЕМ ИХ В ОДИН ----------------//
+import { combineReducers } from 'redux';
 
 import plantsReducer from "./plantsReducer";
 
