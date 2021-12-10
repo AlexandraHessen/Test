@@ -1,9 +1,9 @@
 ﻿import React from 'react';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux'; // createStore - создаем Redax
+import { Provider } from 'react-redux'; //оборачиваем все приложение теги
+import { createStore } from 'redux'; // создаем store и привязываем его к Reducer
 import { BrowserRouter } from 'react-router-dom';
 
-import combinedReducer from '../redux/reducers.js';
+import combinedReducer from '../redux/reducers.js'; //combinedReducer файл со всеми Reducer
 import CountriesList from '../components/CountriesList';
 
 import Header from '../components/Header'

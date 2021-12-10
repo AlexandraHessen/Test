@@ -6,6 +6,8 @@ import CatalogPage from './CatalogPage';
 import ContactsPage from './ContactsPage';
 import BasketPage from './BasketPage';
 
+import Catalog from '../components/Catalog';
+
 class RouterPages extends React.Component {
           
   render() {
@@ -13,7 +15,9 @@ class RouterPages extends React.Component {
       <div>
         <Route path="/" exact  />
         {/* component={MainPage} */}
-        <Route path="/catalog"  component={CatalogPage} />
+        {/* <Route path="/catalog" exact component={CatalogPage} /> */}
+        <Route path="/catalog/:pageNumber" component={CatalogPage} />
+
         {/* <Route path="/catalog/:pageNumber" exact component={CatalogPage} /> ПАГИНАЦИЯ */}
         {/* <Route path="/catalog/:category" exact component={CatalogPage} /> */}
         {/* Page_Client в props получит под именем param то что было в URL после /слеша

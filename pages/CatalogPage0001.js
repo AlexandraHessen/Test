@@ -6,8 +6,6 @@ import isoFetch from 'isomorphic-fetch';
 import PlantCard from '../components/PlantCard';
 import './CatalogPage.css'
 
-import Catalog from '../components/Catalog';
-
 import { plantsLoadingAC, plantsErrorAC, plantsSetAC } from "../redux/plantsAC"; //action type
 
 class CatalogPage extends React.PureComponent {
@@ -69,19 +67,19 @@ class CatalogPage extends React.PureComponent {
 
 
 
-    // let category=this.props.match.params.category;
-    // let plantsArr=this.props.plants.data;
-    // if (category){
-    //   plantsArr=plantsArr.filter((plant)=>plant.category==category)
-    // }
-    // console.log(plantsArr)
+    let category=this.props.match.params.category;
+    let plantsArr=this.props.plants.data;
+    if (category){
+      plantsArr=plantsArr.filter((plant)=>plant.category==category)
+    }
+    console.log(plantsArr)
 
 
-    // let plantsArrCode=plantsArr.map( plant=>
-    //   <PlantCard key={plant.code} info={plant} />
-    // )
+    let plantsArrCode=plantsArr.map( plant=>
+      <PlantCard key={plant.code} info={plant} />
+    )
 
-   let plantsArr=this.props.plants.data;
+
 
     return (
       // this.props.plants.data - массив с растениями
@@ -91,7 +89,9 @@ class CatalogPage extends React.PureComponent {
       //     this.props.plants.data.map( (countryInfo,index) => <li key={countryInfo.id}>{countryInfo.name}</li> )
       //   }
       // </ul>
-      <Catalog plantsArr={plantsArr} pageNumber={this.props.match.params.pageNumber}> </Catalog>
+      <div className="CatalogPage">
+        {plantsArrCode}
+      </div>
 
     );
 
