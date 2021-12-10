@@ -22,15 +22,16 @@ class PlantCard extends React.PureComponent{
     render(){
         return (
             <div className="PlantCard">
-                <img src={this.props.info.imgUrl} className="PlantImg" />
-                <p>{this.props.info.name}</p>
+                <Navlink to={"/catalog/"+this.props.info.code} >
+                    <img src={this.props.info.imgUrl} className="PlantImg" />
+                </Navlink>
+                <Navlink to={"/catalog/"+this.props.info.code} >
+                    <p>{this.props.info.name}</p>
+                </Navlink>
                 <div>
                     <h4 className="Price">{this.props.info.price} руб.</h4>
                     <i className="fas fa-shopping-cart"></i> 
-                    {/* <span>в корзину</span> */}
                 </div>
-
-
             </div>
         )
     }

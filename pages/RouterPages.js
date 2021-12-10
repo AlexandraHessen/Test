@@ -7,6 +7,8 @@ import ContactsPage from './ContactsPage';
 import BasketPage from './BasketPage';
 
 import Catalog from '../components/Catalog';
+import PlantCard from '../components/PlantCard';
+import PlantInfo from '../components/PlantInfo';
 
 class RouterPages extends React.Component {
           
@@ -16,7 +18,8 @@ class RouterPages extends React.Component {
         <Route path="/" exact  />
         {/* component={MainPage} */}
         {/* <Route path="/catalog" exact component={CatalogPage} /> */}
-        <Route path="/catalog/:pageNumber" component={CatalogPage} />
+        <Route path="/catalog/:pageNumber" exact component={CatalogPage} />
+        <Route path="/catalog/:productId" exact component={PlantInfo} />
 
         {/* <Route path="/catalog/:pageNumber" exact component={CatalogPage} /> ПАГИНАЦИЯ */}
         {/* <Route path="/catalog/:category" exact component={CatalogPage} /> */}

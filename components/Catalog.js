@@ -23,19 +23,16 @@ class Catalog extends React.PureComponent{
         let pageLinksArr=[];
         let countOfAllPages=Math.ceil(countOfAllPlants/this.state.countOfPlantsOnOnePage); //общее кол-во  страниц
         for (let i=1; i<=countOfAllPages; i++){ //строим сами теги страниц
-            pageLinksArr.push(<li><NavLink to={`/catalog/${i}`} key={i} className="PaginationLink" activeClassName="ActivePaginationLink">{i}</NavLink></li>)
-        }//<li><NavLink to="/basket" className="PageLink"activeClassName="ActivePageLink">Корзина</NavLink></li>
-        console.log(pageLinksArr)
+            pageLinksArr.push(<li key={i}><NavLink to={`/catalog/${i}`} key={i} className="PaginationLink" activeClassName="ActivePaginationLink">{i}</NavLink></li>)
+        }
+
         let pageNumber=parseInt(this.props.pageNumber) //номер страницы
-        console.log(pageNumber)
+
         let startIndex = (pageNumber-1) * this.state.countOfPlantsOnOnePage; // индекс первого элемента на странице (с какого?) номер страницы минус 1 * количество  элементов на странице
         let endIndex = startIndex + this.state.countOfPlantsOnOnePage //индекс последнего элемента на странице (по какой?) индекс первого товара на странице + кол-во товаров на странице
 
         let objsPlantOnOnePage = plantsArr.slice(startIndex, endIndex) // элементы на одной странице ( общее количество делим slice от и до НЕ ВКЛЮЧИТЕЛЬНО)
-        console.log(objsPlantOnOnePage)
 
-        // quantityPlantOnPage
-        // objPlantOnOnePage 
 
         // какие элементы отображать на 1 странице 
 
@@ -54,7 +51,7 @@ class Catalog extends React.PureComponent{
             </div>
 
             <ul className="Pagination">
-               { pageLinksArr}
+                { pageLinksArr}
             </ul>
         </div>
 
