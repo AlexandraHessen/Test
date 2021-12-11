@@ -30,11 +30,12 @@ html, body {
 
 .MainPage .Main_Container h1,h3{
     color:#357A10;
+    margin-bottom: 10px;
 }
 
 .MainPage .Content{
     width: 90%;
     margin: 0 40px 40px;
-
     color: #363636;
 }
+

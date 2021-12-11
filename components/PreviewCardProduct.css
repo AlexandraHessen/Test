@@ -30,15 +30,25 @@
 }
 
 .PreviewCardProduct .fa-shopping-cart{
-    color:#357A10;
-     border: 1px solid #357A10;
+    color: #8ccb68;
+     /* border: 1px solid #357A10;
      color: #8ccb68;
      font-size: 17px;
      margin-left: 15px;
      padding: 8px 13px;
     border-radius: 5px;
-    border: solid 2px #8ccb68;
+    border: solid 2px #8ccb68; */
      /* position: absolute;
      left: 20px;
      top: 13px; */
+}
+
+.PreviewCardProduct .ButtonToBasket{
+    border: solid 2px #8ccb68;
+     font-size: 17px;
+     margin-left: 15px;
+     padding: 8px 13px;
+    border-radius: 5px;
+    background-color: #fff;
+
 }
