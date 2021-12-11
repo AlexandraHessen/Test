@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import {connect} from 'react-redux';
 
+import {add_product, del_product} from '../redux/basketAC'
+
 import "./PreviewCardProduct.css"
 class PreviewCardProduct extends React.PureComponent{
 
@@ -20,6 +22,10 @@ class PreviewCardProduct extends React.PureComponent{
         pageNumber:  PropTypes.number.isRequired
     }
 
+    addProductToBasket = () =>{
+        this.props.dispatch( add_product(this.props.counterid,1) );
+    }
+
     render(){
         
         return (
@@ -32,7 +38,7 @@ class PreviewCardProduct extends React.PureComponent{
                 </NavLink>
                 <div>
                     <h4 className="Price">{this.props.info.price} руб.</h4>
-                    <button type="button" onClick = {this.addIntoCart} className="ButtonToBasket">
+                    <button type="button" onClick = {this.addProductToBasket} className="ButtonToBasket">
                         <NavLink to="/basket"><i className="fas fa-shopping-cart"></i></NavLink>
                 </button>
                 </div>
@@ -41,4 +47,9 @@ class PreviewCardProduct extends React.PureComponent{
     }
 }
 
-export default PreviewCardProduct
+const mapStateToProps = function (state) {
+    // этому компоненту ничего не нужно из хранилища Redux
+    return { }; 
+};
+
+export default connect(mapStateToProps)(PreviewCardProduct);
