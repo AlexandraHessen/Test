@@ -6,7 +6,7 @@ import { ADD_PRODUCT, DEL_PRODUCT } from '../redux/basketAC';
 import "./BasketPage.css"
 class BasketPage extends React.Component{
     static propTypes = {
-        // productsInBasket: PropTypes.object.isRequired, // передано из Redux
+        basket: PropTypes.object.isRequired, // передано из Redux
 
     }
     render(){

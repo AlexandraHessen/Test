@@ -6,11 +6,12 @@ const DEL_PRODUCT = "DEL_PRODUCT"
 //функция для dispatch (из файла CounterButton) которая возвращает хэш с action type 
 // называется ActionCreator
 
-const add_product = function(productId, addValue) {
+const add_product = function(productId) {
+// const add_product = function(productId, addValue) {
     return {
       type: ADD_PRODUCT,
       productId: productId,
-      addValue: addValue,
+      // addValue: addValue,
     };
   }
   
