@@ -23,7 +23,7 @@ class PreviewCardProduct extends React.PureComponent{
     }
 
     addProductToBasket = () =>{
-        this.props.dispatch( add_product(this.props.counterid,1) );
+        this.props.dispatch( add_product(this.props.info.code,this.props.info) );
     }
 
     render(){

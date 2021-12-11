@@ -14,6 +14,20 @@ class CardProduct extends React.PureComponent {
     plants: PropTypes.object.isRequired,  //передано из Redux  (массив с растениями)
   };
 
+  // static propTypes = {
+  //   info: PropTypes.shape({
+  //       id: PropTypes.number.isRequired,
+  //       imgUrl: PropTypes.string.isRequired,
+  //       name: PropTypes.string.isRequired,
+  //       price: PropTypes.number.isRequired,
+  //       category: PropTypes.string.isRequired,
+  //       brand: PropTypes.string.isRequired,
+  //       description: PropTypes.string.isRequired,
+  //       qty: PropTypes.number.isRequired,
+  //       sum: PropTypes.number.isRequired,
+  //     }),
+  // };
+
   // componentDidMount(){
   //   let plantArr=this.props.plants.data
   // }
