@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import isoFetch from 'isomorphic-fetch';
 
 import Catalog from '../components/Catalog'
-import PlantCard from '../components/PlantCard';
+import PreviewCardProduct from '../components/PreviewCardProduct';
 import './CatalogPage.css'
 
 
@@ -67,7 +67,7 @@ class CatalogPage extends React.PureComponent {
 
 
     let plantsArrCode=plantsArr.map( plant=>
-      <PlantCard key={plant.code} info={plant} />
+      <PreviewCardProduct key={plant.code} info={plant} />
     )
 
 

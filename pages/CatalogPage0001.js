@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux'; // позволяет React компоненту подписаться на Redux 
 import isoFetch from 'isomorphic-fetch';
 
-import PlantCard from '../components/PlantCard';
+import PreviewCardProduct from '../components/PreviewCardProduct';
 import './CatalogPage.css'
 
 import { plantsLoadingAC, plantsErrorAC, plantsSetAC } from "../redux/plantsAC"; //action type
@@ -76,7 +76,7 @@ class CatalogPage extends React.PureComponent {
 
 
     let plantsArrCode=plantsArr.map( plant=>
-      <PlantCard key={plant.code} info={plant} />
+      <PreviewCardProduct key={plant.code} info={plant} />
     )
 
 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import isoFetch from 'isomorphic-fetch';
 
-import PlantCard from '../components/PlantCard';
+import PreviewCardProduct from '../components/PreviewCardProduct';
 import Catalog from '../components/Catalog'
 import './CatalogPage.css'
 
@@ -66,7 +66,7 @@ class CatalogPage extends React.PureComponent {
 
 
     let plantsArrCode=plantsArr.map( plant=>
-      <PlantCard key={plant.code} info={plant} />
+      <PreviewCardProduct key={plant.code} info={plant} />
     )
 
 */

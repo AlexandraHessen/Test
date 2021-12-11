@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux'; // позволяет React компоненту подписаться на Redux 
 import isoFetch from 'isomorphic-fetch';
 
-import PlantCard from '../components/PlantCard';
+import PreviewCardProduct from '../components/PreviewCardProduct';
 import './CatalogPage.css'
 
 import Catalog from '../components/Catalog';
@@ -26,7 +26,7 @@ class CatalogPage extends React.PureComponent {
     // отправляем AJAX запрос
     // isoFetch("http://fe.it-academy.by/Examples/net_city/plants.json")
     // https://jsonplaceholder.typicode.com/
-    isoFetch("../plants.json")
+    isoFetch("/plants.json")
     // isoFetch - работает с промисами
     // запросить json по ссылке
     // когда будет решен промис выполнить .then...
@@ -78,7 +78,7 @@ class CatalogPage extends React.PureComponent {
 
 
     // let plantsArrCode=plantsArr.map( plant=>
-    //   <PlantCard key={plant.code} info={plant} />
+    //   <PreviewCardProduct key={plant.code} info={plant} />
     // )
 
    let plantsArr=this.props.plants.data;

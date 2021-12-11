@@ -1,0 +1,44 @@
+.PreviewCardProduct{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* row-gap: 1.5rem; */
+    width: 25%;
+    margin-bottom: 30px;
+}
+.PreviewCardProduct > a{
+    text-align: center;
+    text-decoration: none;
+    color: #363636;
+
+}
+.PreviewCardProduct .NameProduct{
+    margin-bottom: 5px;
+}
+
+
+.PreviewCardProduct .PlantImg{
+    width: 95%;
+    height: 300px;
+    margin-bottom: 15px;
+}
+
+.PreviewCardProduct .Price{
+    font-weight: bold;
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.PreviewCardProduct .fa-shopping-cart{
+    color:#357A10;
+     border: 1px solid #357A10;
+     color: #8ccb68;
+     font-size: 17px;
+     margin-left: 15px;
+     padding: 8px 13px;
+    border-radius: 5px;
+    border: solid 2px #8ccb68;
+     /* position: absolute;
+     left: 20px;
+     top: 13px; */
+}
