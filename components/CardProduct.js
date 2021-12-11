@@ -1,64 +1,22 @@
-// import React from 'react';
-// import PropTypes from 'prop-types';
-// import {connect} from 'react-redux'; // позволяет React компоненту подписаться на Redux 
-
-
-// class PlantInfo extends React.PureComponent {
-
-//   static propTypes = {
-//     plants: PropTypes.object.isRequired,  //redux массив с растениями
-//   };
-
-//   render() {
-//     let plantId=parseInt(this.props.match.params.productId);
-//     console.log(this.props.plants)
-//     // let plantInfo=this.props.plants.find(plant=>plant.code==plantId);
-//     return(
-//         <div className="PlantCard">
-
-//             {/* <img src={plantInfo.imgUrl} className="PlantImg" />
-  
-
-//             <p>{plantInfo.name}</p> */}
- 
-//         <div>
-//             {/* <h4 className="Price">{plantInfo.price} руб.</h4> */}
-//             <i className="fas fa-shopping-cart"></i> 
-//         </div>
-//     </div>
-//     )
-
-//   }
-
-// }
-
-// const mapStateToProps = function (state) {
-//   return {
-//     plants: state.plants,
-//   };
-// };
-
-// export default connect(mapStateToProps)(PlantInfo);
-// // connect(mapStateToProps) - значит подписан на redux 
-
-
 import React from 'react';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 import {connect} from 'react-redux'; // позволяет React компоненту подписаться на Redux 
 import isoFetch from 'isomorphic-fetch';
 
-import PlantCard from '../components/PlantCard';
-
-
-
+import './CardProduct.css'
 
 import { plantsLoadingAC, plantsErrorAC, plantsSetAC } from "../redux/plantsAC"; //action type
 
-class PlantInfo extends React.PureComponent {
+class CardProduct extends React.PureComponent {
 
   static propTypes = {
-    plants: PropTypes.object.isRequired,  //redux массив с растениями
+    plants: PropTypes.object.isRequired,  //передано из Redux  (массив с растениями)
   };
+
+  // componentDidMount(){
+  //   let plantArr=this.props.plants.data
+  // }
 
   componentDidMount() {
     this.props.dispatch( plantsLoadingAC() ); // переводим раздел plants стора в состояние "загружается"
@@ -110,19 +68,19 @@ class PlantInfo extends React.PureComponent {
 
     let plantId=parseInt(this.props.match.params.productId);
       console.log(this.props.plants)
-       let plantInfo=this.props.plants.data.find(plant=>plant.code==plantId);
+      // console.log(plantArr)
+      let plantInfo=this.props.plants.data.find(plant=>plant.code==plantId);
+      //  let CardProduct=this.props.plants.data.find(plant=>plant.code==plantId);
       return(
-          <div className="PlantCard">
-  
+          <div className="CardProduct">
               <img src={plantInfo.imgUrl} className="PlantImg" />
-    
-  
-              <p>{plantInfo.name}</p>
-   
-          <div>
-              <h4 className="Price">{plantInfo.price} руб.</h4>
-              <i className="fas fa-shopping-cart"></i> 
-          </div>
+              <div className="CardProduct">
+                <h1 className="NameProduct">{plantInfo.name}</h1>
+                <h4 className="Price">{plantInfo.price} руб.</h4>
+                <NavLink to="/basket"><i className="fas fa-shopping-cart"></i></NavLink> 
+                <h4>Описание:</h4>
+                <p> {plantInfo.description}</p>
+              </div>
       </div>
       )
 
@@ -140,7 +98,7 @@ class PlantInfo extends React.PureComponent {
 
 
     // let plantsArrCode=plantsArr.map( plant=>
-    //   <PlantCard key={plant.code} info={plant} />
+    //   <PreviewCardProduct key={plant.code} info={plant} />
     // )
 
 //    let plantsArr=this.props.plants.data;
@@ -167,5 +125,5 @@ const mapStateToProps = function (state) {
   };
 };
 
-export default connect(mapStateToProps)(PlantInfo);
+export default connect(mapStateToProps)(CardProduct);
 // connect(mapStateToProps) - значит подписан на redux 

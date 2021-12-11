@@ -14,7 +14,7 @@ class Header extends React.Component{
                 <div className="Info">
                     <div className="Logo">
                         <span>Plants</span>
-                        <img src="../img/logo.png" className="ImgLogo"></img>
+                        <img src="/img/logo.png" className="ImgLogo"></img>
                     </div>
                     <Contacts />
                 </div>

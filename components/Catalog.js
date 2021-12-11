@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 // import {connect} from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
-import PlantCard from '../components/PlantCard';
+import PreviewCardProduct from '../components/PreviewCardProduct';
 
 import './Catalog.css'
 
@@ -37,11 +37,11 @@ class Catalog extends React.PureComponent{
         // какие элементы отображать на 1 странице 
 
         let plantsArrCode=objsPlantOnOnePage.map( plant=>
-            <PlantCard key={plant.code} info={plant} pageNumber={pageNumber}/>
+            <PreviewCardProduct key={plant.code} info={plant} pageNumber={pageNumber}/>
             )
 
         // let plantsArrCode=this.props.plantsArr.map( plant=>
-        //     <PlantCard key={plant.code} info={plant} />
+        //     <PreviewCardProduct key={plant.code} info={plant} />
         //     )
 // console.log(plantsArrCode)
         return(
