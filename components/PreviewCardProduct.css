@@ -45,10 +45,11 @@
 
 .PreviewCardProduct .ButtonToBasket{
     border: solid 2px #8ccb68;
-     font-size: 17px;
-     margin-left: 15px;
-     padding: 8px 13px;
+    font-size: 17px;
+    margin-left: 15px;
+    padding: 8px 13px;
     border-radius: 5px;
     background-color: #fff;
+    cursor: pointer;
 
 }

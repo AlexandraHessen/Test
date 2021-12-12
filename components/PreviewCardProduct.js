@@ -38,9 +38,12 @@ class PreviewCardProduct extends React.PureComponent{
                 </NavLink>
                 <div>
                     <h4 className="Price">{this.props.info.price} руб.</h4>
+                <NavLink to="/basket">
                     <button type="button" onClick = {this.addProductToBasket} className="ButtonToBasket">
-                        <NavLink to="/basket"><i className="fas fa-shopping-cart"></i></NavLink>
-                </button>
+                        <i className="fas fa-shopping-cart"></i>
+                    </button>
+                </NavLink>
+
                 </div>
             </div>
         )
