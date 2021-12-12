@@ -1,3 +1,32 @@
+.RowProductBasket{
+    font-weight: bold;
+    background-color: #f9f9f9
+    /* text-align: center; */
+}
 .RowProductBasket .Img{
-    width: 140px;
+    width: 180px;
+    margin: 20px;
+}
+
+.RowProductBasket .Name{
+    width: 40%;
+    /* margin: 20px; */
+}
+
+.RowProductBasket .Count{
+    text-align: center;
+    
+}
+
+.RowProductBasket .CountInfo{
+    width: 60%;
+    height: 20px;
+    text-align: center;
+    border: 1px solid  #969696;
+    /* border: 1px solid  #969696;; */
+}
+
+.RowProductBasket .fa-times-circle{
+    font-size: 20px;
+    color: #969696;
 }

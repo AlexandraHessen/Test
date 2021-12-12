@@ -23,15 +23,17 @@ class RowProductBasket extends React.PureComponent{
       };
 
       render(){
+          let count=1
+          let total=this.props.info.price*count
 
         return(
             <tr className="RowProductBasket">
                 <td><img src={this.props.info.imgUrl} className="Img"></img></td>
-                <td>{this.props.info.name}</td>
-                <td>{this.props.info.price}</td>
-                <td></td>
-                <td></td>
-                <td><input type="button" value="del"/></td>
+                <td className="Name">{this.props.info.name}</td>
+                <td className="Price">{this.props.info.price} руб.</td>
+                <td className="Count"><input type="text" className="CountInfo"></input></td>
+                <td className="Total">{total} руб.</td>
+                <td className="DelButton"><i className="far fa-times-circle"></i></td>
             </tr>
         )      
     }
@@ -40,6 +42,6 @@ class RowProductBasket extends React.PureComponent{
 const mapStateToProps = function (state) {
     // этому компоненту ничего не нужно из хранилища Redux
     return { }; 
-  };
-  
-  export default connect(mapStateToProps)(RowProductBasket);
+};
+
+export default connect(mapStateToProps)(RowProductBasket);
