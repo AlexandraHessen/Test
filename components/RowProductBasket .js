@@ -32,12 +32,9 @@ class RowProductBasket extends React.PureComponent{
                 <td></td>
                 <td></td>
                 <td><input type="button" value="del"/></td>
-
             </tr>
-        )
-
-        
-      }
+        )      
+    }
 }
 
 const mapStateToProps = function (state) {
