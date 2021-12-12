@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import {connect} from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 import PreviewCardProduct from '../components/PreviewCardProduct';
@@ -33,10 +32,7 @@ class Catalog extends React.PureComponent{
 
         let objsPlantOnOnePage = plantsArr.slice(startIndex, endIndex) // элементы на одной странице ( общее количество делим slice от и до НЕ ВКЛЮЧИТЕЛЬНО)
 
-
-        // какие элементы отображать на 1 странице 
-
-        let plantsArrCode=objsPlantOnOnePage.map( plant=>
+        let plantsArrCode=objsPlantOnOnePage.map( plant=> //все элементы которые отображаются на первой странице
             <PreviewCardProduct key={plant.code} info={plant} pageNumber={pageNumber}/>
             )
 
