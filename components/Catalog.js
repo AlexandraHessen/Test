@@ -36,10 +36,6 @@ class Catalog extends React.PureComponent{
             <PreviewCardProduct key={plant.code} info={plant} pageNumber={pageNumber}/>
             )
 
-        // let plantsArrCode=this.props.plantsArr.map( plant=>
-        //     <PreviewCardProduct key={plant.code} info={plant} />
-        //     )
-// console.log(plantsArrCode)
         return(
         <div>
             <div className="CatalogPage">
