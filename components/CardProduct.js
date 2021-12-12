@@ -4,14 +4,18 @@ import { NavLink } from 'react-router-dom';
 import {connect} from 'react-redux'; // позволяет React компоненту подписаться на Redux 
 import isoFetch from 'isomorphic-fetch';
 
+
+
 import './CardProduct.css'
 
 import { plantsLoadingAC, plantsErrorAC, plantsSetAC } from "../redux/plantsAC"; //action type
+import {add_product, del_product} from '../redux/basketAC'
 
 class CardProduct extends React.PureComponent {
 
   static propTypes = {
-    plants: PropTypes.object.isRequired,  //передано из Redux  (массив с растениями)
+    plants: PropTypes.object.isRequired,  //передано из Redux  (массив с объектами растений)
+                                          // this.props.plants.data =  [{…}, {…}, {…}, {…}]
   };
 
   // static propTypes = {
@@ -72,13 +76,25 @@ class CardProduct extends React.PureComponent {
 
   }
 
+  addProductToBasket = (plantId, plantInfo) =>{
+    this.props.dispatch( add_product(plantId,plantInfo) );
+                        // add_product = function(productId, objProductInfo)
+                        console.log(plantId)
+                        console.log(plantInfo)
+  }
+
   render() {
 
+    // console.log(this.props.plants.data.code)
+    console.log(this.props.plants.data)
     if ( this.props.plants.status<=1 )
       return "загрузка...";
 
     if ( this.props.plants.status===2 )
       return "ошибка загрузки данных";
+
+
+
 
     let plantId=parseInt(this.props.match.params.productId);
       console.log(this.props.plants)
@@ -91,7 +107,11 @@ class CardProduct extends React.PureComponent {
               <div className="CardProduct">
                 <h1 className="NameProduct">{plantInfo.name}</h1>
                 <h4 className="Price">{plantInfo.price} руб.</h4>
-                <NavLink to="/basket"><i className="fas fa-shopping-cart"></i></NavLink> 
+                <NavLink to="/basket">
+                    <button type="button" onClick = {this.addProductToBasket(plantId, plantInfo)} className="ButtonToBasket">
+                        <i className="fas fa-shopping-cart"></i>
+                    </button>
+                </NavLink>
                 <h4>Описание:</h4>
                 <p> {plantInfo.description}</p>
               </div>
