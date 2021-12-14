@@ -1,6 +1,6 @@
 // ---------------- САМА ФУНКЦИЯ REDUСER  ----------------//
 // REDUCER не делает запрос в Ajax, логика должна быть в компоненте
-import { ADD_PRODUCT, DEL_PRODUCT } from './basketAC'; //название action type
+import { ADD_PRODUCT, DEL_PRODUCT, CLEAR_BASKET } from './basketAC'; //название action type
 
 
 const initState={ // начальный state
@@ -35,6 +35,12 @@ function basketReducer(state=initState,action) {
     case DEL_PRODUCT: {
       let newState = {...state};
       delete newState.productsInBasket[action.productId];
+      return newState;
+    }
+
+    case CLEAR_BASKET:{
+      let newState = {...state};
+      newState.productsInBasket={};
       return newState;
     }
 

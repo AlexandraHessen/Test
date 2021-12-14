@@ -4,6 +4,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 import {connect} from 'react-redux';
+import {clear_basket} from '../redux/basketAC';
 
 import RowProductBasket from './RowProductBasket '
 import './Basket.css'
@@ -18,6 +19,10 @@ class Basket extends React.PureComponent{
     //    получим значение нужного счётчика
     // let counterValue=this.props.counters.cnts[this.props.counterid];
     // let counterValue=this.props.basket.productsInBasket;
+
+    clearBasket=()=>{
+      this.props.dispatch( clear_basket() )
+    }
 
     render(){
         console.log(this.props.basket.productsInBasket)
@@ -56,6 +61,7 @@ console.log(sumProductsInBasket)
               Итого:  
               <div className='SumProductsInBasket'>{sumProductsInBasket} руб.</div>
             </div>
+            <input type="button" value="Очистить корзину" className="ClearBasket" onClick = {this.clearBasket}></input>
           </div>
             
         )
