@@ -1,7 +1,12 @@
 .TableBasket{
     width: 100%;
     border-collapse: collapse;
+    margin-bottom: 25px;
 }
+
+/* .TableBasket table{
+    margin: 10px 0 15px 0;
+} */
 .TableBasket tr td{
     padding: 20px 0;
     width: 10%;
@@ -13,6 +18,15 @@
 }
 
 .TableBasket .TableHeader th{
-    padding-bottom: 10px;
+    padding: 10px 0 10px;
     color: #969696;
+}
+
+.Total{
+    text-align: right;
+}
+
+.SumProductsInBasket{
+    font-size: 22px;
+    font-weight: bold;
 }

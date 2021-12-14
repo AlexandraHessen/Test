@@ -43,7 +43,7 @@ class RowProductBasket extends React.PureComponent{
                 <td className="Name">{this.props.info.name}</td>
                 <td className="Price">{this.props.info.price} руб.</td>
                 <td className="Count"><input type="text" className="CountInfo"></input></td>
-                <td className="Total">{total} руб.</td>
+                <td className="TotalSumProductRow">{total} руб.</td>
                 <td >
                     <button type="button" onClick = {this.delProductFromBasket} className="DelButton">
                         <i className="far fa-times-circle"></i>

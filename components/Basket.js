@@ -1,6 +1,6 @@
 "use strict";
 
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 import {connect} from 'react-redux';
@@ -21,8 +21,10 @@ class Basket extends React.PureComponent{
 
     render(){
         console.log(this.props.basket.productsInBasket)
+        let sumProductsInBasket=0;
         let productsInBasketCode=[];
         //НУЖНО ДЕЛАТЬ МАССИВ
+
         for (let prod in this.props.basket.productsInBasket) {
     //  console.log(prod) //12 =ID
     //  console.log(this.state.cart.products)//obj из всех товаров
@@ -31,8 +33,12 @@ class Basket extends React.PureComponent{
             productsInBasketCode.push(<RowProductBasket 
                 key = {this.props.basket.productsInBasket[prod].code} 
                 info = {this.props.basket.productsInBasket[prod]} />)
+                sumProductsInBasket+=this.props.basket.productsInBasket[prod].price
           };
+console.log(sumProductsInBasket)
+          
         return(
+          <div>
             <table className = 'TableBasket'>
               <tbody>
                 <tr className = 'TableHeader'>
@@ -46,6 +52,12 @@ class Basket extends React.PureComponent{
                 {productsInBasketCode}
               </tbody>
             </table>
+            <div className='Total'>
+              Итого:  
+              <div className='SumProductsInBasket'>{sumProductsInBasket} руб.</div>
+            </div>
+          </div>
+            
         )
     }
     

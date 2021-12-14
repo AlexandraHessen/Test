@@ -3,3 +3,8 @@
     background-color: #fff;
     min-height: 700px;
 }
+
+.BasketPage>h3{
+    color: #363636;
+    padding: 10px;
+}

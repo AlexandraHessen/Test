@@ -20,7 +20,7 @@ class BasketPage extends React.Component{
         return(
             <div className="BasketPage">
                 <h1>Корзина</h1>
-                {(countProductsInBasket == 0) ? <h4>Корзина пуста.</h4> : <Basket />}
+                {(countProductsInBasket == 0) ? <h3>Корзина пуста.</h3> : <Basket />}
             </div>
         )
     }
