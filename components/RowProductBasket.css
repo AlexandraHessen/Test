@@ -26,7 +26,13 @@
     /* border: 1px solid  #969696;; */
 }
 
-.RowProductBasket .fa-times-circle{
+.RowProductBasket  .DelButton{
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+.RowProductBasket .DelButton .fa-times-circle{
     font-size: 20px;
     color: #969696;
 }
