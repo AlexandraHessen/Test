@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import {connect} from 'react-redux';
+import {del_product} from '../redux/basketAC';
 
 import './RowProductBasket.css'
 
@@ -22,6 +23,16 @@ class RowProductBasket extends React.PureComponent{
           }),
       };
 
+    //   componentWillMount(){
+        delProductFromBasket = () =>{
+            this.props.dispatch( del_product(this.props.info.code) );
+                                // del_product = function(productId)
+                                console.log(this.props.info.code)
+          }
+    //   }
+
+
+
       render(){
           let count=1
           let total=this.props.info.price*count
@@ -33,7 +44,11 @@ class RowProductBasket extends React.PureComponent{
                 <td className="Price">{this.props.info.price} руб.</td>
                 <td className="Count"><input type="text" className="CountInfo"></input></td>
                 <td className="Total">{total} руб.</td>
-                <td className="DelButton"><i className="far fa-times-circle"></i></td>
+                <td >
+                    <button type="button" onClick = {this.delProductFromBasket} className="DelButton">
+                        <i className="far fa-times-circle"></i>
+                    </button>
+                </td>
             </tr>
         )      
     }

@@ -4,12 +4,10 @@ import { NavLink } from 'react-router-dom';
 import {connect} from 'react-redux'; // позволяет React компоненту подписаться на Redux 
 import isoFetch from 'isomorphic-fetch';
 
-
-
 import './CardProduct.css'
 
 import { plantsLoadingAC, plantsErrorAC, plantsSetAC } from "../redux/plantsAC"; //action type
-import {add_product, del_product} from '../redux/basketAC'
+import {add_product, del_product} from '../redux/basketAC';
 
 class CardProduct extends React.PureComponent {
 
