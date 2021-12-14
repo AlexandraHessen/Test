@@ -24,10 +24,10 @@ class Basket extends React.PureComponent{
         let productsInBasketCode=[];
         //НУЖНО ДЕЛАТЬ МАССИВ
         for (let prod in this.props.basket.productsInBasket) {
-    //         console.log(prod) //12 =ID
-    //   console.log(this.state.cart.products)//obj из всех товаров
+    //  console.log(prod) //12 =ID
+    //  console.log(this.state.cart.products)//obj из всех товаров
     //  console.log(this.props.basket.productsInBasket[prod].code) //12
-    //   console.log(this.state.cart.products[prod])//данные этого товара {id: 11, name: 'Морковь Вита Лонга', brand: 'Гавриш', category: 'Семена овощей', price: 0.65, …}
+    //  console.log(this.state.cart.products[prod])//данные этого товара {id: 11, name: 'Морковь Вита Лонга', brand: 'Гавриш', category: 'Семена овощей', price: 0.65, …}
             productsInBasketCode.push(<RowProductBasket 
                 key = {this.props.basket.productsInBasket[prod].code} 
                 info = {this.props.basket.productsInBasket[prod]} />)
