@@ -34,6 +34,22 @@ class Order extends React.PureComponent{
                     <input type="text" name="email" className="InputOrder"></input>
                 </div>
                 <div>
+                    <label htmlFor="delivery" className="LabelOrder">Способ доставки</label>
+                    <select name="delivery" className="InputOrder">
+                        <option value = {0}>Самовывоз</option>
+                        <option value = {1}>Почтой</option>
+                        <option value = {2}>Курьером по Минску</option>
+                    </select>
+                </div>
+                <div>
+                    <label htmlFor="payment" className="LabelOrder">Способ оплаты</label>
+                    <select name="payment" className="InputOrder">
+                        <option value = {0}>Наличными</option>
+                        <option value = {1}>Пластиковой картой</option>
+                        <option value = {2}>ЕРИП</option>
+                    </select>
+                </div>
+                <div>
                     <label htmlFor="note" className="LabelOrder">Примечание</label>
                     <textarea name="note" className="TextareaOrder"></textarea>
                 </div>
