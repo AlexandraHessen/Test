@@ -34,6 +34,7 @@
 
 .ClearBasket{
     border: solid 2px #8ccb68;
+    color:  #363636;
     padding: 8px 13px;
     border-radius: 40px;
     cursor: pointer;

@@ -16,7 +16,7 @@
     font-size: 14px;
     font-family: 'Rubik', sans-serif;
     line-height: 1.428571429;
-    color: #222;
+    color:  #363636;
     vertical-align: middle;
     background-color: #fff;
     background-image: none;
@@ -39,7 +39,7 @@
     font-size: 14px;
     font-family: 'Rubik', sans-serif;
     line-height: 1.428571429;
-    color: #222;
+    color:  #363636;
     vertical-align: middle;
     background-color: #fff;
     background-image: none;
@@ -52,7 +52,7 @@
 .CheckoutButton{
     border: solid 2px #8ccb68;
     font-family: 'Rubik', sans-serif;
-    color: #222;
+    color:  #363636;
     background-color: #f9f9f9;
     text-transform: uppercase;
     font-size: 12px;
