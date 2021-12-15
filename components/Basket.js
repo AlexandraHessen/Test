@@ -26,7 +26,6 @@ class Basket extends React.PureComponent{
     }
 
     render(){
-        console.log(this.props.basket.productsInBasket)
         let sumProductsInBasket=0;
         let productsInBasketCode=[];
         //НУЖНО ДЕЛАТЬ МАССИВ
@@ -41,7 +40,6 @@ class Basket extends React.PureComponent{
                 info = {this.props.basket.productsInBasket[prod]} />)
                 sumProductsInBasket+=this.props.basket.productsInBasket[prod].price
           };
-console.log(sumProductsInBasket)
           
         return(
           <div>

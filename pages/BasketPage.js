@@ -15,8 +15,6 @@ class BasketPage extends React.Component{
     render(){
         //????????????? а сели другие ключи будут 
         let countProductsInBasket=Object.keys(this.props.basket.productsInBasket).length;
-        console.log(countProductsInBasket)
-        console.log(this.props.basket)
         return(
             <div className="BasketPage">
                 <h1>Корзина</h1>
