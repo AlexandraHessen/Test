@@ -1,0 +1,78 @@
+.Order{
+    background-color: #e6f7dd;
+    padding: 20px;
+}
+
+.LabelOrder{
+    /* font-weight: bold; */
+    /* margin: 20px; */
+}
+
+.InputOrder{
+    display: block;
+    /* width: 100%; */
+    height: 40px;
+    padding: 11px 20px;
+    font-size: 14px;
+    font-family: 'ProximaNova-Extrabld';
+    line-height: 1.428571429;
+    color: #222;
+    vertical-align: middle;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #fff;
+    border-radius: 40px;
+    /* margin:  0 0 20px 20px; */
+    margin-bottom: 20px;
+}
+
+.InputOrder:focus, .TextareaOrder:focus{
+    outline: 0;
+}
+
+.TextareaOrder{
+    display: block;
+    height: auto;
+    width: 50%;
+    height: 40px;
+    padding: 11px 20px;
+    font-size: 14px;
+    font-family: 'ProximaNova-Extrabld';
+    line-height: 1.428571429;
+    color: #222;
+    vertical-align: middle;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #fff;
+    border-radius: 40px;
+    margin-bottom: 20px;
+    resize: none;
+}
+
+.CheckoutButton{
+    border: solid 2px #8ccb68;
+    font-family: 'Rubik', sans-serif;
+    color: #222;
+    background-color: #f9f9f9;
+    text-transform: uppercase;
+    font-size: 12px;
+    border-radius: 40px;
+    padding: 16px 25px;
+    font-weight: bold;
+    display: block;
+    margin: auto;
+    margin-bottom: 20px
+    /* outline: none !important; */
+    /* border: solid 2px #8ccb68;
+    padding: 8px 13px;
+    border-radius: 40px;
+    cursor: pointer;
+    position: relative;
+    background-color: #f9f9f9;
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+    margin-bottom: 25px; */
+    /* display: block;
+    margin-left: auto;
+    margin-right: 0; */
+}

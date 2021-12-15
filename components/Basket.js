@@ -7,6 +7,7 @@ import {connect} from 'react-redux';
 import {clear_basket} from '../redux/basketAC';
 
 import RowProductBasket from './RowProductBasket '
+import Order from './Order';
 import './Basket.css'
 
 class Basket extends React.PureComponent{
@@ -62,6 +63,7 @@ console.log(sumProductsInBasket)
               <div className='SumProductsInBasket'>{sumProductsInBasket} руб.</div>
             </div>
             <input type="button" value="Очистить корзину" className="ClearBasket" onClick = {this.clearBasket}></input>
+            <Order />
           </div>
             
         )

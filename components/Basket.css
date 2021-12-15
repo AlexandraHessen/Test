@@ -35,12 +35,14 @@
 .ClearBasket{
     border: solid 2px #8ccb68;
     padding: 8px 13px;
-    border-radius: 100px;
+    border-radius: 40px;
     cursor: pointer;
     position: relative;
     background-color: #f9f9f9;
     font-family: 'Rubik', sans-serif;
-    font-weight: bold;
-    float: right;
+    margin-bottom: 25px;
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
 
 }
