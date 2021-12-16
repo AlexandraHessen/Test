@@ -32,18 +32,24 @@
     margin-bottom: 20px;
 }
 
-.ClearBasket{
+.ActionsBasket{
+    clear: both;
+    text-align: right;
+}
+
+.BasketButtons{
     border: solid 2px #8ccb68;
+    font-weight: bold;
     color:  #363636;
     padding: 8px 13px;
     border-radius: 40px;
     cursor: pointer;
     position: relative;
-    background-color: #f9f9f9;
+    background-color: #fff;
     font-family: 'Rubik', sans-serif;
-    margin-bottom: 25px;
-    display: block;
+    margin: 0 0 25px 20px;
+    /* display: block;
     margin-left: auto;
-    margin-right: 0;
+    margin-right: 0; */
 
 }

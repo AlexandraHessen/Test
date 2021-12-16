@@ -20,9 +20,16 @@ class Basket extends React.PureComponent{
     //    получим значение нужного счётчика
     // let counterValue=this.props.counters.cnts[this.props.counterid];
     // let counterValue=this.props.basket.productsInBasket;
+    state={
+      checkout: false
+    }
 
-    clearBasket=()=>{
+    BasketButtons=()=>{
       this.props.dispatch( clear_basket() )
+    }
+
+    checkout=()=>{
+      this.setState({checkout: true})
     }
 
     render(){
@@ -60,8 +67,11 @@ class Basket extends React.PureComponent{
               Итого:  
               <div className='SumProductsInBasket'>{sumProductsInBasket} руб.</div>
             </div>
-            <input type="button" value="Очистить корзину" className="ClearBasket" onClick = {this.clearBasket}></input>
-            <Order />
+            <div className='ActionsBasket'>
+              <input type="button" value="Очистить корзину" className="BasketButtons" onClick = {this.BasketButtons}></input>
+              <input type="button" value="Оформить заказ" className="BasketButtons" onClick = {this.checkout}></input>
+            </div>
+            {this.state.checkout && <Order />}
           </div>
             
         )
