@@ -21,7 +21,7 @@ class Basket extends React.PureComponent{
     // let counterValue=this.props.counters.cnts[this.props.counterid];
     // let counterValue=this.props.basket.productsInBasket;
     state={
-      checkout: false
+      checkout: false //нажата кнопка Оформить заказ
     }
 
     BasketButtons=()=>{
