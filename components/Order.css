@@ -3,13 +3,13 @@
     padding: 20px;
 }
 
-.OrderMade{
+/* .OrderMade{
     background-color: #e6f7dd;
     padding: 20px;
     border-radius: 40px;
-    border: solid 2px #8ccb68;
+    border: solid 2px #8ccb67;
     text-align: center;
-}
+} */
 
 .LabelOrder{
     /* font-weight: bold; */
@@ -94,7 +94,8 @@ input:-webkit-autofill {
     font-weight: bold;
     display: block;
     margin: auto;
-    margin-bottom: 20px
+    margin-bottom: 20px;
+    cursor: pointer;
     /* outline: none !important; */
     /* border: solid 2px #8ccb68;
     padding: 8px 13px;
