@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import {connect} from 'react-redux';
 
-import {add_product, del_product} from '../redux/basketAC'
+import {add_product, set_localStorage} from '../redux/basketAC'
 
 import "./PreviewCardProduct.css"
 class PreviewCardProduct extends React.PureComponent{
