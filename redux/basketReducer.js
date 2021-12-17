@@ -1,6 +1,6 @@
 // ---------------- САМА ФУНКЦИЯ REDUСER  ----------------//
 // REDUCER не делает запрос в Ajax, логика должна быть в компоненте
-import { ADD_PRODUCT, DEL_PRODUCT, CLEAR_BASKET } from './basketAC'; //название action type
+import { ADD_PRODUCT, DEL_PRODUCT, CLEAR_BASKET} from './basketAC'; //название action type
 
 
 const initState={ // начальный state
