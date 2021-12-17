@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 
 import {connect} from 'react-redux';
 import {add_order} from '../redux/orderAC';
+import {clear_basket} from '../redux/basketAC';
+import {plantsEvents} from './events';
 
 import './Order.css'
 
@@ -31,7 +33,7 @@ class Order extends React.PureComponent{
         telError: 'Поле "Телефон" обязательно для заполнения. Введите корректный телефон!',
         emailError: 'Поле "E-mail" обязательно для заполнения. Введите корректный E-mail!',
 
-        isOrderMade: false
+        // isOrderMade: false
     }
 
     changeInput = (EO) => {
@@ -164,7 +166,7 @@ class Order extends React.PureComponent{
             // let validTel =this.validTel();
             // let validEmail =this.validEmail();
             // if(this.validName() && this.validSurname() && this.validTel() && this.validEmail()){
-            this.setState({isOrderMade: true})
+            // this.setState({isOrderMade: true});
             this.props.dispatch( add_order( this.state.tel,
                         {
                             name: this.state.name,
@@ -174,7 +176,9 @@ class Order extends React.PureComponent{
                             delivery: this.state.delivery,
                             payment: this.state.payment,
                             note: this.state.note,
-                        }) )
+                        }) );
+            this.props.dispatch( clear_basket() );
+            plantsEvents.emit('EvMadeOrder', true)
         // }
         // console.log(this.state.notValidForm)
         // if(  this.validName()&&this.validSurname()&&this.validTel()&&this.validEmail()){
@@ -198,9 +202,9 @@ class Order extends React.PureComponent{
 
     render(){
         return(
-            (this.state.isOrderMade)?
-            (<div className="OrderMade"><h1>Ваш заказ оформлен!</h1></div>):
-            (<div className="Order">
+            // (this.state.isOrderMade)?
+            // (<div className="OrderMade"><h1>Ваш заказ оформлен!</h1></div>):
+            <div className="Order">
                 <h1>Оформление заказа:</h1>
                 <div>
                     <label htmlFor="name" className="LabelOrder">Имя</label>
@@ -243,7 +247,7 @@ class Order extends React.PureComponent{
                     <textarea name="note" className="TextareaOrder" onChange = {this.changeInput}></textarea>
                 </div>
                 <input type="button" value="Оформить заказ" className="CheckoutButton" onClick = {this.addOrder} disabled={this.state.notValidForm}></input>
-            </div>)
+            </div>
         )
     }
 }
@@ -252,6 +256,7 @@ const mapStateToProps = function (state) {
       // весь раздел Redux state под именем basket будет доступен
       // данному компоненту как this.props.basket
       order: state.order,
+      basket: state.basket,
     };
   };
   
