@@ -19,6 +19,7 @@ class BasketPage extends React.Component{
     }
     componentDidMount =()=>{
         plantsEvents.addListener('EvMadeOrder', this.evMadeOrder);
+        this.scrollTop();
     }
 
     componentWillUnmount =()=>{
@@ -28,6 +29,11 @@ class BasketPage extends React.Component{
     evMadeOrder=()=>{
         this.setState({isMadeOrder: true})
     }
+
+    scrollTop = () => {
+        window.scrollTo(0, 0);
+        console.log('scroll')
+    };
 
 
     render(){

@@ -24,7 +24,7 @@ class Basket extends React.PureComponent{
       checkout: false //нажата кнопка Оформить заказ
     }
 
-    BasketButtons=()=>{
+    clearBasket=()=>{
       this.props.dispatch( clear_basket() )
     }
 
@@ -68,7 +68,7 @@ class Basket extends React.PureComponent{
               <div className='SumProductsInBasket'>{sumProductsInBasket} руб.</div>
             </div>
             <div className='ActionsBasket'>
-              <input type="button" value="Очистить корзину" className="BasketButtons" onClick = {this.BasketButtons}></input>
+              <input type="button" value="Очистить корзину" className="BasketButtons" onClick = {this.clearBasket}></input>
               <input type="button" value="Оформить заказ" className="BasketButtons" onClick = {this.checkout}></input>
             </div>
             {this.state.checkout && <Order />}

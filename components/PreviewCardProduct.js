@@ -8,7 +8,7 @@ import {connect} from 'react-redux';
 import {add_product, set_localStorage} from '../redux/basketAC'
 
 import "./PreviewCardProduct.css"
-class PreviewCardProduct extends React.PureComponent{
+class PreviewCardProduct extends React.PureComponent{p
 
     static propTypes ={
         info: PropTypes.shape({
