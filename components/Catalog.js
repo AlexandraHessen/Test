@@ -16,6 +16,16 @@ class Catalog extends React.PureComponent{
         countOfPlantsOnOnePage: 12
     }
 
+    // componentDidMount = () => {
+    //     this.scrollTop();
+        
+    // };
+
+    scrollTop = () => {
+        window.scrollTo(0, 0);
+        console.log('scroll')
+    };
+
     render(){
         let plantsArr=this.props.plantsArr.slice();
         let countOfAllPlants=plantsArr.length; //общее кол-во всех элементов 
@@ -35,7 +45,7 @@ class Catalog extends React.PureComponent{
         let plantsArrCode=objsPlantOnOnePage.map( plant=> //все элементы которые отображаются на первой странице
             <PreviewCardProduct key={plant.code} info={plant} pageNumber={pageNumber}/>
             )
-
+            // this.scrollTop();
         return(
         <div>
             <div className="CatalogPage">

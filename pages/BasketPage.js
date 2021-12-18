@@ -37,6 +37,7 @@ class BasketPage extends React.Component{
 
 
     render(){
+        this.scrollTop();
         //????????????? а сели другие ключи будут 
         let countProductsInBasket=Object.keys(this.props.basket.productsInBasket).length;
         return(
