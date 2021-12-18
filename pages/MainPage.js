@@ -13,7 +13,15 @@ import Footer from '../components/Footer'
 
 import './MainPage.css'
 
-let store=createStore(combinedReducer); // Redux создай store которым управляет этот reducer - combinedReducer(который в себе объединяет все reduserы)
+const persistedState = localStorage.getItem('reduxState') 
+                      ? JSON.parse(localStorage.getItem('reduxState'))
+                      : {}
+
+let store=createStore(combinedReducer, persistedState); // Redux создай store которым управляет этот reducer - combinedReducer(который в себе объединяет все reduserы)
+
+store.subscribe(()=>{
+  localStorage.setItem('reduxState', JSON.stringify(store.getState()))
+})
 
 class MainPage extends React.PureComponent {
 
