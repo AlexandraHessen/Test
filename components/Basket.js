@@ -55,9 +55,9 @@ class Basket extends React.PureComponent{
                 <tr className = 'TableHeader'>
                   <th>Товар</th>
                   <th></th>
-                  <th>Цена</th>
-                  <th>Количество</th>
-                  <th>Итого</th>
+                  <th className='priceTh'>Цена</th>
+                  {/* <th>Количество</th>
+                  <th>Итого</th> */}
                   <th></th>
                 </tr>
                 {productsInBasketCode}
