@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Ваше имя: <input type=text id='IName'><br />
+Ваш возраст: <input type=text id='IAge'><br />
+<input type=button value='Запомнить меня' onclick='storeInfo()'>
+
+<script src="http://fe.it-academy.by/JQ/jquery.js"></script>
+<script>
+
+"use strict";
+
+var ajaxHandlerScript="https://fe.it-academy.by/AjaxStringStorage2.php";
+var updatePassword;  //рандомный пароль
+var stringName='YAKOVLEVA_PLANTS_C';
+// var stringName='YAKOVLEVA_PLANTS_CATAL';
+// var stringName='YAKOVLEVA_PLANTS_CATALOG';
+
+// вызываем по click на 'Запомнить меня'
+function storeInfo() {
+    updatePassword=Math.random();
+    $.ajax( {
+            url : ajaxHandlerScript, type : 'POST', cache : false, dataType:'json',
+            data : { f : 'LOCKGET', n : stringName, p : updatePassword },
+            success : lockGetReady, error : errorHandler
+        }
+    );
+}
+
+
+// ------------------ ЗАПИСЫВАЕМ ВВЕДЕННЫЕ ДАННЫЕ В INPUT  ------------------ //
+// ИЛИ
+// ------------------ ПЕРЕЗАПИСЫВАЕМ ДАННЫЕ НА НАШИ ПРООБРАЗУЮ ИХ В JSON  ------------------ //
+function lockGetReady(callresult) {
+    if ( callresult.error!=undefined )
+        alert(callresult.error);
+    else {
+        // нам всё равно, что было прочитано -
+        // всё равно перезаписываем
+        var info=document.getElementById('IAge').value
+        console.log(info)
+        // var info={
+        //     // name : document.getElementById('IName').value,
+        //     age : document.getElementById('IAge').value
+        // };
+        $.ajax( {
+                url : ajaxHandlerScript, type : 'POST', cache : false, dataType:'json',
+                data : { f : 'UPDATE', n : stringName, v : info, p : updatePassword },
+                success : updateReady, error : errorHandler
+            }
+        );
+    }
+}
+
+function updateReady(callresult) {
+    if ( callresult.error!=undefined )
+        alert(callresult.error);
+}
+
+function restoreInfo() {
+    $.ajax(
+        {
+            url : ajaxHandlerScript, type : 'POST', cache : false, dataType:'json',
+            data : { f : 'READ', n : stringName },
+            success : readReady, error : errorHandler
+        }
+    );
+}
+
+function readReady(callresult) {
+    if ( callresult.error!=undefined )
+        alert(callresult.error);
+    else if ( callresult.result!="" ) {
+        var info=callresult.result;
+        // document.getElementById('IName').value=info.name;
+        // document.getElementById('IAge').value=info.age;
+        document.getElementById('IAge').value=info;
+    }
+}
+
+function errorHandler(jqXHR,statusStr,errorStr) {
+    alert(statusStr+' '+errorStr);
+}
+
+restoreInfo();
+
+</script>
+</body>
+</html>
