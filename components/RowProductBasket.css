@@ -1,11 +1,12 @@
 .RowProductBasket{
     font-weight: bold;
-    background-color: #f9f9f9
-    /* text-align: center; */
+    background-color: #f9f9f9;
+    text-align: center;
 }
 .RowProductBasket .Img{
     width: 180px;
     margin: 20px;
+    /* margin: 15px 35px; */
 }
 
 .RowProductBasket .Name{
