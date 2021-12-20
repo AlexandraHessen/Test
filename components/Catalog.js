@@ -27,7 +27,9 @@ class Catalog extends React.PureComponent{
     };
 
     render(){
+        console.log(this.props.plantsArr)
         let plantsArr=this.props.plantsArr.slice();
+        
         let countOfAllPlants=plantsArr.length; //общее кол-во всех элементов 
         let pageLinksArr=[];
         let countOfAllPages=Math.ceil(countOfAllPlants/this.state.countOfPlantsOnOnePage); //общее кол-во  страниц
