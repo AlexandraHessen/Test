@@ -34,45 +34,45 @@ class CardProduct extends React.PureComponent {
   //   let plantArr=this.props.plants.data
   // }
 
-  componentDidMount() {
-    this.props.dispatch( plantsLoadingAC() ); // переводим раздел plants стора в состояние "загружается"
-    // значит this.props.dispatch( { type:"PLANTS_LOADING" } );
-    // мы вызываем функцию из файла с экшенами (plantsAC) которая возвращает такой хэш
-    //  {    type:"PLANTS_LOADING"}
+  // componentDidMount() {
+  //   this.props.dispatch( plantsLoadingAC() ); // переводим раздел plants стора в состояние "загружается"
+  //   // значит this.props.dispatch( { type:"PLANTS_LOADING" } );
+  //   // мы вызываем функцию из файла с экшенами (plantsAC) которая возвращает такой хэш
+  //   //  {    type:"PLANTS_LOADING"}
 
 
-    // отправляем AJAX запрос
-    // isoFetch("http://fe.it-academy.by/Examples/net_city/plants.json")
-    // https://jsonplaceholder.typicode.com/
-    isoFetch("/plants.json")
-    // isoFetch - работает с промисами
-    // запросить json по ссылке
-    // когда будет решен промис выполнить .then...
-        .then( (response) => { // response - HTTP-ответ
-            if (!response.ok) {
-                let Err=new Error("fetch error " + response.status);
-                Err.userMessage="Ошибка связи";
-                throw Err;
-            }
-            else
-                return response.json();
-        })
-        .then( (data) => { //когда данные хорошо загружены
-            this.props.dispatch( plantsSetAC(data) ); 
-            // значит this.props.dispatch( { PLANTS_SET } );
-            // мы вызываем функцию из файла с экшенами (plantsAC) которая возвращает такой хэш
-            // {
-            //   type: PLANTS_SET,
-            //   plants:plants, //передаем загруженные данные
-            // };
-        })
-        .catch( (error) => {
-            console.error(error);
-            this.props.dispatch( plantsErrorAC() ); // переводим раздел plants стора в состояние "ошибка"
-          })
-    ;
+  //   // отправляем AJAX запрос
+  //   // isoFetch("http://fe.it-academy.by/Examples/net_city/plants.json")
+  //   // https://jsonplaceholder.typicode.com/
+  //   isoFetch("/plants.json")
+  //   // isoFetch - работает с промисами
+  //   // запросить json по ссылке
+  //   // когда будет решен промис выполнить .then...
+  //       .then( (response) => { // response - HTTP-ответ
+  //           if (!response.ok) {
+  //               let Err=new Error("fetch error " + response.status);
+  //               Err.userMessage="Ошибка связи";
+  //               throw Err;
+  //           }
+  //           else
+  //               return response.json();
+  //       })
+  //       .then( (data) => { //когда данные хорошо загружены
+  //           this.props.dispatch( plantsSetAC(data) ); 
+  //           // значит this.props.dispatch( { PLANTS_SET } );
+  //           // мы вызываем функцию из файла с экшенами (plantsAC) которая возвращает такой хэш
+  //           // {
+  //           //   type: PLANTS_SET,
+  //           //   plants:plants, //передаем загруженные данные
+  //           // };
+  //       })
+  //       .catch( (error) => {
+  //           console.error(error);
+  //           this.props.dispatch( plantsErrorAC() ); // переводим раздел plants стора в состояние "ошибка"
+  //         })
+  //   ;
 
-  }
+  // }
 
   addProductToBasket = (plantId, plantInfo) =>{
     this.props.dispatch( add_product(plantId,plantInfo) );
@@ -84,12 +84,12 @@ class CardProduct extends React.PureComponent {
   render() {
 
     // console.log(this.props.plants.data.code)
-    console.log(this.props.plants.data)
-    if ( this.props.plants.status<=1 )
-      return "загрузка...";
+    // console.log(this.props.plants.data)
+    // if ( this.props.plants.status<=1 )
+    //   return "загрузка...";
 
-    if ( this.props.plants.status===2 )
-      return "ошибка загрузки данных";
+    // if ( this.props.plants.status===2 )
+    //   return "ошибка загрузки данных";
 
 
 
