@@ -2,6 +2,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import isoFetch from 'isomorphic-fetch';
 
 import {connect} from 'react-redux';
 import {add_order} from '../redux/orderAC';
@@ -33,96 +34,41 @@ class Order extends React.PureComponent{
         telError: 'Поле "Телефон" обязательно для заполнения. Введите корректный телефон!',
         emailError: 'Поле "E-mail" обязательно для заполнения. Введите корректный E-mail!',
 
-        // isOrderMade: false
     }
 
     changeInput = (EO) => {
         this.setState({[EO.target.name]: EO.target.value})
-            // this.props.cbChanged(true)
     }
 
     validate = (EO) =>{
         // ----------------------- ВАЛИДАЦИЯ ВСЕХ ПОЛЕЙ ПРИ УХОДЕ С 1 ПОЛЯ-----------------------//
         if (this.state.name === ""){
-            // this.setState({nameNotValid: true})
             this.setState({nameNotValid: true}, this.validAll)
         } else{
-            // this.setState({nameNotValid: false})
             this.setState({nameNotValid: false}, this.validAll)
-    
         }
         
         if (this.state.surname === ""){
             this.setState({surnameNotValid: true}, this.validAll)
         } else{
             this.setState({surnameNotValid: false}, this.validAll)
-          
         }
         
-        // let tel = this.state.tel
-        // const reg = /^(\+375|80)\s?-?\(?(29|25|44|33|17)\s?-?\)?(\d{3})\s?-?(\d{2})\s?-?(\d{2})$/;
         if (this.state.tel === "" || !(/^\+375|80(\s+)?\(?(29|33|44|25|17)\)?(\s+)?[0-9]{3}-[0-9]{2}-[0-9]{2}$/.test(this.state.tel))){
             this.setState({telNotValid: true}, this.validAll)
         } else{
             this.setState({telNotValid: false}, this.validAll)
-           
         }
         
-        // let email = this.state.email
-        // const reg = /^[-a-z0-9!#$%&'*+/=?^_`{|}~]+(\.[-a-z0-9!#$%&'*+/=?^_`{|}~]+)*@([a-z0-9]([-a-z0-9]{0,61}[a-z0-9])?\.)*(aero|arpa|asia|biz|cat|com|coop|edu|gov|info|int|jobs|mil|mobi|museum|name|net|org|pro|tel|travel|[a-z][a-z])$/;
-        // if (this.state.email === "" || reg.test(email) ){
         if (this.state.email === "" || !(/^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test(this.state.email))){
             this.setState({emailNotValid: true}, this.validAll)
         } else{
             this.setState({emailNotValid: false}, this.validAll)
-        
         }
-
-            }
+    }
     
 
-    // validName = (EO) => {
-    //     if (this.state.name === ""){
-    //         // this.setState({nameNotValid: true})
-    //         this.setState({nameNotValid: true}, this.validAll)
-    //     } else{
-    //         // this.setState({nameNotValid: false})
-    //         this.setState({nameNotValid: false}, this.validAll)
-    //         return true
-    //     }
-    // }
-    // validSurname = (EO) => {
-    //     if (this.state.surname === ""){
-    //         this.setState({surnameNotValid: true}, this.validAll)
-    //     } else{
-    //         this.setState({surnameNotValid: false}, this.validAll)
-    //         return true
-    //     }
-    // }
-    // validTel = (EO) => {
-    //     let tel = this.state.tel
-    //     const reg = /^(\+375|80)\s?-?\(?(29|25|44|33|17)\s?-?\)?(\d{3})\s?-?(\d{2})\s?-?(\d{2})$/;
-    //     if (tel === "" || reg.test(tel)){
-    //         this.setState({telNotValid: true}, this.validAll)
-    //     } else{
-    //         this.setState({telNotValid: false}, this.validAll)
-    //         return true
-    //     }
-    // }
-    // validEmail= (EO) => {
-    //     let email = this.state.email
-    //     // const reg = /^[-a-z0-9!#$%&'*+/=?^_`{|}~]+(\.[-a-z0-9!#$%&'*+/=?^_`{|}~]+)*@([a-z0-9]([-a-z0-9]{0,61}[a-z0-9])?\.)*(aero|arpa|asia|biz|cat|com|coop|edu|gov|info|int|jobs|mil|mobi|museum|name|net|org|pro|tel|travel|[a-z][a-z])$/;
-    //     // if (this.state.email === "" || reg.test(email) ){
-    //     if (this.state.email === ""){
-    //         this.setState({emailNotValid: true}, this.validAll)
-    //     } else{
-    //         this.setState({emailNotValid: false}, this.validAll)
-    //         return true
-    //     }
-    // }
-
     validAll=(EO)=>{
-        // console.log(EO.target.value)
         if (this.state.nameNotValid||
             this.state.surnameNotValid||
             this.state.telNotValid||
@@ -131,74 +77,124 @@ class Order extends React.PureComponent{
                 {this.setState({notValidForm: true}) //button disabled=true
         } else  {
             this.setState({notValidForm: false})
+        }
     }
-        
-        
-    //     {
-    //         if(this.state.name!==""){
-    //             {this.setState({notValidForm: false})
-    //                 if(EO.target="button"){
-    //                     this.props.dispatch( add_order({
-    //                 // code: this.props.code,
-    //                 name: this.state.name,
-    //                 surname: this.state.surname,
-    //                 tel: this.state.tel,
-    //                 email: this.state.email,
-    //             }) )
-    //             }
-
-    //         }
-    //     }
-            
-    // }
-    // console.log(this.state.nameNotValid)
-    }
-
 
     addOrder=()=>{
-        // let validName=this.validName();
-        // let validSurname = this.validSurname();
-        // let validTel =this.validTel();
-        // let validEmail =this.validEmail();
-        // if(validName && validSurname && validTel && validEmail){
-            // let validName=this.validName();
-            // let validSurname = this.validSurname();
-            // let validTel =this.validTel();
-            // let validEmail =this.validEmail();
-            // if(this.validName() && this.validSurname() && this.validTel() && this.validEmail()){
-            // this.setState({isOrderMade: true});
-            this.props.dispatch( add_order( this.state.tel,
-                        {
-                            name: this.state.name,
-                            surname: this.state.surname,
-                            tel: this.state.tel,
-                            email: this.state.email,
-                            delivery: this.state.delivery,
-                            payment: this.state.payment,
-                            note: this.state.note,
-                        }) );
-            this.props.dispatch( clear_basket() );
-            plantsEvents.emit('EvMadeOrder', true)
-        // }
-        // console.log(this.state.notValidForm)
-        // if(  this.validName()&&this.validSurname()&&this.validTel()&&this.validEmail()){
-        // this.props.dispatch( add_order({
-        //     // code: this.props.code,
-        //     name: this.state.name,
-        //     surname: this.state.surname,
-        //     tel: this.state.tel,
-        //     email: this.state.email,
-        // }) )
-        // }
+        let objCustomerInfo={        
+            name: this.state.name,
+            surname: this.state.surname,
+            tel: this.state.tel,
+            email: this.state.email,
+            delivery: this.state.delivery,
+            payment: this.state.payment,
+            note: this.state.note,
+        };
+        let password=Math.random();
 
-        // this.props.dispatch( add_order({
-        //     // code: this.props.code,
+        let sp1 = new URLSearchParams();
+        sp1.append('f', 'LOCKGET');
+        sp1.append('n', 'YAKOVLEVA_PLANTS_OR');
+        sp1.append('p', password);
+        isoFetch("http://fe.it-academy.by/AjaxStringStorage2.php", { // отправляем AJAX запрос
+            method: 'POST',
+            headers: {
+                "Accept": "application/json",
+            },
+            body: sp1,
+        })
+                        // isoFetch - работает с промисами
+                        // запросить json по ссылке
+                        // когда будет решен промис выполнить .then...
+          .then( (response) => { // response - HTTP-ответ
+                if (!response.ok) {
+                    let Err=new Error("fetch error " + response.status);
+                    Err.userMessage="Ошибка связи";
+                    throw Err;
+                }
+                else
+                    return response.json();
+            })
+                .then( (data) => { //когда данные хорошо загружены
+            this.lockGetReady(data, objCustomerInfo, password);
+        })
+        .catch( (error) => {
+            console.error(error);
+        });
+        this.props.dispatch( add_order( objCustomerInfo, this.props.basket.productsInBasket
+                        // {
+                        //     name: this.state.name,
+                        //     surname: this.state.surname,
+                        //     tel: this.state.tel,
+                        //     email: this.state.email,
+                        //     delivery: this.state.delivery,
+                        //     payment: this.state.payment,
+                        //     note: this.state.note,
+                        // }
+                        ) );
+        this.props.dispatch( clear_basket() );
+        plantsEvents.emit('EvMadeOrder', true);
+    }
+
+    lockGetReady = (callresult, objCustomerInfo, password) => {
+        // let objCustomerInfo={        
         //     name: this.state.name,
         //     surname: this.state.surname,
         //     tel: this.state.tel,
         //     email: this.state.email,
-        // }) )
-      }
+        //     delivery: this.state.delivery,
+        //     payment: this.state.payment,
+        //     note: this.state.note,
+        // }
+        console.log(callresult)
+        let allInfoOrder=[]
+        if ( callresult.error!=undefined )
+            alert(callresult.error);
+        else {
+            allInfoOrder=[];
+            if ( callresult.result!="" ) { // либо строка пустая - сообщений нет
+                // либо в строке - JSON-представление массива сообщений
+                allInfoOrder=JSON.parse(callresult.result);
+                // вдруг кто-то сохранил мусор вместо LOKTEV_CHAT_MESSAGES?
+                if ( !Array.isArray(allInfoOrder) )
+                allInfoOrder=[];
+            }
+            console.log(allInfoOrder)
+    // ----------------------- ДОБАВЛЯЕМ НАШИ НОВЫЕ СООБЩЕНИЯ  ----------------------- //
+            allInfoOrder.push( { customerInfo: objCustomerInfo , products: this.props.basket.productsInBasket } );
+    
+    // ----------------------- ДОБАВЛЯЕМ НАШИ ДАННЫЕ К УЖЕ ИМЕЮЩИМСЯ----------------------- //
+    // и сохраняем их на сервере и отпираем их, чтобы они уже были доступны
+            let sp2 = new URLSearchParams();
+            sp2.append('f', 'UPDATE');
+            sp2.append('n', 'YAKOVLEVA_PLANTS_OR');
+            sp2.append("v", JSON.stringify(allInfoOrder));
+            sp2.append('p', password);
+            isoFetch("http://fe.it-academy.by/AjaxStringStorage2.php", {
+                method: 'POST',
+                headers: {
+                    "Accept": "application/json",
+                },
+                body: sp2,
+            })
+              .then( (response) => { // response - HTTP-ответ
+                    if (!response.ok) {
+                        let Err=new Error("fetch error " + response.status);
+                        Err.userMessage="Ошибка связи";
+                        throw Err;
+                    }
+                    else
+                        return response.json();
+                })
+                .catch( (error) => {
+                    console.error(error);
+                });
+        }
+
+    }
+
+
+    
 
     render(){
         return(
