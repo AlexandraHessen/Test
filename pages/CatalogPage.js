@@ -68,8 +68,11 @@ class CatalogPage extends React.PureComponent {
     if (!localStorage.plants){
       let sp1 = new URLSearchParams();
       sp1.append('f', 'READ');
-      sp1.append('n', 'YAKOVLEVA_PLANTS_C');
-      // sp1.append('n', 'YAKOVLEVA_PLANTS_CATALOG');
+      
+      // sp1.append('n', 'YAKOVLEVA_PL');//"imgUrl": "../public/img/img_4294.jpg"
+      // sp1.append('n', 'YAKOVLEVA_PLANT');//"imgUrl": "../img/img_9241_1.jpg"
+      sp1.append('n', 'YAKOVLEVA_PLANTS_CATALOG');//"imgUrl": "/img/img_9241_1.jpg"
+      // sp1.append('n', 'YAKOVLEVA_PLANTS_CATAL');//"imgUrl": "./img/img_9241_1.jpg" вообще не  работает
       isoFetch("http://fe.it-academy.by/AjaxStringStorage2.php", {
           method: 'POST',
           headers: {
