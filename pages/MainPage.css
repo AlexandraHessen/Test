@@ -12,6 +12,7 @@ html, body {
 .MainPage{
     min-height: 100vh;
     background: url('../img/2.jpg') no-repeat;
+    /* background: url('../public/img/2.jpg') no-repeat; */
     background-size: cover;
     color: #fff;
     margin: 0;
