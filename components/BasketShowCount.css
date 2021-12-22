@@ -1,7 +1,7 @@
 .BasketShowCount  .fa-shopping-cart{
     color: #fff;
     /* color: #8ccb68; */
-    font-size: 25px;
+    font-size: 1.7em;
     position: relative
      /* border: 1px solid #357A10;
      color: #8ccb68;
@@ -17,7 +17,7 @@
 
 .BasketShowCount  .ButtonToBasket{
     border: solid 2px #8ccb68;
-    font-size: 17px;
+    font-size: 1em;
     padding: 8px 13px;
     border-radius: 5px;
     background-color: transparent;
@@ -37,7 +37,21 @@
     color: white;
     text-align: center;
     line-height: 25px;
-    font-size: 14px;
+    font-size: 0.9em;
     font-weight: bold;
 }
 
+@media all and (max-width: 500px){
+    .BasketShowCount  .ButtonToBasket{
+        padding: 6px 10px;
+    }
+
+    .BasketShowCount .CountProductsInBasket{
+
+        width: 20px;
+        height: 20px;
+
+        line-height: 25px;
+    }
+
+}
