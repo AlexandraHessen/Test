@@ -52,11 +52,18 @@
 
 .CardProduct .ButtonToBasket{
     border: solid 2px #8ccb68;
-    font-size: 17px;
+    font-size: 1em;
     margin-left: 15px;
     padding: 8px 13px;
     border-radius: 5px;
     background-color: #fff;
     cursor: pointer;
 
+}
+
+@media all and (max-width: 500px){
+    .CardProduct .ButtonToBasket{
+        padding: 6px 10px;
+    
+    }
 }
