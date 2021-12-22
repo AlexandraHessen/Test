@@ -11,14 +11,14 @@ class Footer extends React.Component{
     render(){
         return(
             <footer className="Footer">
-                <div>
+                <div className="Menu">
                     <h3>Меню</h3>
                     <MenuPages />
                 </div>
-                <div>
+                {/* <div>
                     <h3>Каталог</h3>
                     <CategoryMenu />
-                </div>
+                </div> */}
                 <div>
                     <h3>Контакты</h3>
                     <Contacts />

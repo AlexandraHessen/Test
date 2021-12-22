@@ -9,7 +9,8 @@
     font-size: 13px;
 
     backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.15);
+    background: #ffffff26;
+    padding-bottom: 15px;
 }
 
 .Footer div{
@@ -18,6 +19,7 @@
 
 .Footer h3{
     padding: 10px 0;
+    margin-bottom: 0;
 }
 
 .Footer .MenuPages{
@@ -55,4 +57,14 @@
 
 .Footer  .ActivePageLink{
     background: none;
+}
+
+@media all and (max-width: 500px){
+    .Footer h3{
+        padding: 5px 0;
+    }
+
+    .Footer  .Menu{
+        display: none;
+    }
 }
