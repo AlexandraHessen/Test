@@ -37,3 +37,11 @@
     font-size: 20px;
     color: #969696;
 }
+
+@media all and (max-width: 500px){
+    .RowProductBasket .Img{
+        width: 120px;
+        margin: 5px;
+    }
+
+}
