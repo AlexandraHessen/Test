@@ -124,6 +124,17 @@ input[type="button"]:disabled{
  }
 
  input:-internal-autofill-selected{
-    background-color: -internal-light-dark(rgb(232, 55, 254), rgba(50, 185, 8, 0.4)) !important;
+    background-color: -internal-light-dark(#fff, rgba(50, 185, 8, 0.4)) !important;
  }
+
+ @media all and (max-width: 500px){
+    .InputOrder{
+        width: 100%;
+    }
+
+    .TextareaOrder{
+        width: 100%;
+    }
+
+}
  
