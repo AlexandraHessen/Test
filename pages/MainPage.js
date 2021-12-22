@@ -38,7 +38,7 @@ class MainPage extends React.PureComponent {
 
             <main className="Main_Container">
               <div className="Nav_Section">
-                <CategoryMenu />
+                {/* <CategoryMenu /> */}
               </div>
               <div className="Content">
                 <RouterPages/>
