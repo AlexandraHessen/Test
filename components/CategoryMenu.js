@@ -8,7 +8,7 @@ class CategoryMenu extends React.Component{
     render(){
         return (
             <ul className="CategoryMenu">
-                <li><NavLink to="/catalog/deciduous">Декоративно-лиственные растения</NavLink></li>
+                <li><NavLink to="/catalog/deciduous">Лиственные растения</NavLink></li>
                 <li><NavLink to="/catalog/blooming">Цветущие растения</NavLink></li>
                 <li><NavLink to="/catalog/succulents">Кактусы и суккуленты</NavLink></li>
                 <li><NavLink to="/catalog/vines">Лианы</NavLink></li>
