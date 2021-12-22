@@ -11,7 +11,7 @@
 .Header .Logo{
     font-family: 'Pattaya', sans-serif;
     letter-spacing: 2px;
-    font-size: 40px;
+    font-size: 2.5em;
     font-weight: bold;
     color: #fff;
 
@@ -28,4 +28,21 @@
     /* border-bottom: 1px solid ; */
 }
 
+.Header .Contacts{
 
+}
+
+@media all and (max-width: 500px){
+    .Header .Contacts{
+        display: none;
+    }
+
+    .Header .Logo{
+        font-size: 2.5em;
+    }
+
+    .Header .ImgLogo{
+        width: 45px;
+    }
+
+}

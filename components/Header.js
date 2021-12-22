@@ -21,7 +21,9 @@ class Header extends React.Component{
                         <img src="/img/logo.png" className="ImgLogo"></img>
                         {/* <img src="../public/img/logo.png" className="ImgLogo"></img> */}
                     </div>
-                    <Contacts />
+                    <div className='Contacts'>
+                        <Contacts />
+                    </div>
                     <BasketShowCount />
                 </div>
                 <div className="Navigation">
