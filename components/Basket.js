@@ -31,8 +31,24 @@ class Basket extends React.PureComponent{
     checkout=()=>{
       this.setState({checkout: true})
     }
+  //   componentDidMount =()=>{
+
+  //     if(this.props.isNeedToWarn){
+          
+  //         window.onbeforeunload = function() {
+  //             return true;
+  //         };
+  //     }
+
+  // }
 
     render(){
+    //   if(this.props.isNeedToWarn){
+          
+    //     window.onbeforeunload = function() {
+    //         return true;
+    //     };
+    // }
         let sumProductsInBasket=0;
         let productsInBasketCode=[];
         //НУЖНО ДЕЛАТЬ МАССИВ
