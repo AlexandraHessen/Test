@@ -1,3 +1,7 @@
+.Catalog{
+    display: flex;
+    justify-content: space-between;
+}
 .Pagination{
     background-color: #fff;
     display: flex;
@@ -31,4 +35,65 @@
     background: #fff;
     color: #357A10;
     border: solid 1px #357A10;
+}
+
+.Filter{
+    /* background: rgba(255, 255, 255, 0.3); */
+    /* list-style-type: none; */
+    /* max-width: 300px; */
+    margin-right: 20px;
+    /* width: 25%; */
+}
+
+.LabelFilterPrice{
+    font-family: 'PT Sans',sans-serif;
+    color: #fff;
+    font-weight: bold;
+}
+
+.InputFilterPrice{
+    border: 1px solid #fff;
+    border-radius: 3px;
+    margin: 10px 0;
+}
+
+.FilterButtons{
+    border: none;
+    padding: 4px;
+    color: #fff;
+    font-size: 0.75em;
+    background: #357A10;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+input[type="button"].FilterButtons:last-of-type{
+    margin-right: 0;
+}
+
+@media all and (max-width: 980px){
+    .Catalog{
+        flex-direction: column;
+    }
+
+    .Filter{
+        text-align: end;
+        margin-bottom: 10px;
+    }
+
+    .LabelFilterPrice{
+        margin-right: 10px;
+    }
+
+    .InputFilterPrice{
+        margin: 0 0 10px;
+        text-align: end;
+    }
+}
+
+@media all and (max-width: 500px){
+    .InputFilterPrice{
+        width: 20%;
+    }
 }
