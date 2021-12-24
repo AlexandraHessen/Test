@@ -15,37 +15,54 @@ class RowProductBasket extends React.PureComponent{
             name: PropTypes.string.isRequired,
             price: PropTypes.number.isRequired,
             imgUrl: PropTypes.string.isRequired,
-            // category: PropTypes.string.isRequired,
-            // brand: PropTypes.string.isRequired,
-            // description: PropTypes.string.isRequired,
-            // qty: PropTypes.number.isRequired,
-            // sum: PropTypes.number.isRequired,
-          }),
-      };
+        }),
+    };
+    
+    state = {
+        isDelete: false,
+    }
+
+    newRowProductBasketRef = null;
+
+    RowProductBasketRef = (ref) => {
+        this.newRowProductBasketRef = ref;
+    }
 
     //   componentWillMount(){
-        delProductFromBasket = () =>{
-            this.props.dispatch( del_product(this.props.info.code) );
-                                // del_product = function(productId)
-                                console.log(this.props.info.code)
+        delButtonProductFromBasket = () =>{
+            this.setState({isDelete: true});
+
           }
     //   }
+
+    delProductFromBasket = () => {
+        this.props.dispatch( del_product(this.props.info.code) );
+        // del_product = function(productId)
+        console.log(this.props.info.code)
+    }
+
+    componentDidUpdate = () => {
+        if (this.state.isDelete) {
+            this.newRowProductBasketRef.classList.add("DelAnimation");
+            setTimeout(this.delProductFromBasket, 200);
+        }
+    }
 
 
 
       render(){
-          let count=1
-          let total=this.props.info.price*count
+        //   let count=1
+        //   let total=this.props.info.price*count
 
         return(
-            <tr className="RowProductBasket">
+            <tr className="RowProductBasket" ref = {this.RowProductBasketRef}>
                 <td><img src={this.props.info.imgUrl} className="Img"></img></td>
                 <td className="Name">{this.props.info.name}</td>
                 <td className="Price">{this.props.info.price} руб.</td>
                 {/* <td className="Count"><input type="text" className="CountInfo"></input></td>
                 <td className="TotalSumProductRow">{total} руб.</td> */}
                 <td >
-                    <button type="button" onClick = {this.delProductFromBasket} className="DelButton">
+                    <button type="button" onClick = {this.delButtonProductFromBasket} className="DelButton">
                         <i className="far fa-times-circle"></i>
                     </button>
                 </td>
