@@ -6,7 +6,7 @@ import Contacts from './Contacts'
 
 import './Footer.css'
 
-class Footer extends React.Component{
+class Footer extends React.PureComponent {
     // React.PureComponent
     render(){
         return(
