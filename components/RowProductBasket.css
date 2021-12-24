@@ -38,6 +38,31 @@
     color: #969696;
 }
 
+.DelAnimation {
+    animation: MyAnimation 0.2s;
+}
+
+@keyframes MyAnimation
+{
+    0% {
+        opacity: 1;
+        /* -webkit-transform-origin: -150% -100%; */
+                /* transform-origin: 50% 50%;
+        -webkit-transform: scale(1); */
+        transform: translateY(0);
+      }
+      50%{    opacity: 0.3;
+      
+      }
+      100% {
+        opacity: 0;
+        /* -webkit-transform-origin: -50% 50%;
+                transform-origin: -50% -50%;
+        -webkit-transform: scale(0.8); */
+        transform: translateY(-100%);
+      }
+}
+
 @media all and (max-width: 500px){
     .RowProductBasket .Img{
         width: 120px;
