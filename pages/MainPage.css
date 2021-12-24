@@ -12,9 +12,10 @@ html, body {
 }
 .MainPage{
     min-height: 100vh;
-    background: url('/img/2.jpg') no-repeat;
-    /* background: url('../public/img/2.jpg') no-repeat; */
+    background: url('/img/4.jpg') no-repeat;
     background-size: cover;
+    background-position: top center;
+    background-attachment: fixed;
     color: #fff;
     margin: 0;
     padding: 0
@@ -25,7 +26,7 @@ html, body {
     font-family: 'Rubik', sans-serif;
     /* flex-wrap: wrap; */
     max-width: 1400px;
-    min-height: 700px;
+    min-height: 680px;
     margin: 0 auto 20px;
     
 }
