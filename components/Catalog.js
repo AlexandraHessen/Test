@@ -183,16 +183,23 @@ class Catalog extends React.PureComponent{
                 <input type="button" value="Цветущие растения" onClick={this.bloomingPlants}/>
                 <input type="button" value="Кактусы и суккуленты" onClick={this.succulentsPlants}/> */}
             </div>
-            
-            <div>
-                <div className="CatalogPage">
-                    {plantsArrCode}
-                </div>
+            {
+                (plantsArrCode.length>0)
+                ?
+                    <div>
+                        <div className="CatalogPage">
+                            {plantsArrCode}
+                        </div>
 
-                <ul className="Pagination">
-                    { pageLinksArr}
-                </ul>
-            </div>
+                        <ul className="Pagination">
+                            { pageLinksArr}
+                        </ul>
+                    </div>
+                :
+                    <h3 className="NullResults">Поиск не дал результатов.</h3>
+            }
+            
+
 
         </div>
 
