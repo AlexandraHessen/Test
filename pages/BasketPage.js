@@ -10,15 +10,16 @@ import Basket from '../components/Basket'
 import "./BasketPage.css"
 
 class BasketPage extends React.Component{
+    static propTypes = {
+        basket: PropTypes.object.isRequired, // пришло из Redux для проверки есть ли что-то в корзине
+                                            // в ответ ничего не передаем 
+    }
 
     state={
         isMadeOrder: false,
         isNeedToWarn: false,
     }
-    static propTypes = {
-        basket: PropTypes.object.isRequired, // пришло из Redux для проверки есть ли что-то в корзине
-                                            // в ответ ничего не передаем 
-    }
+
     componentDidMount =()=>{
         plantsEvents.addListener('EvMadeOrder', this.evMadeOrder);
         plantsEvents.addListener('EvNeedToWarn', this.evNeedToWarn);
@@ -46,13 +47,13 @@ class BasketPage extends React.Component{
         this.setState({isMadeOrder: true})
     }
 
-    evNeedToWarn=()=>{
-        this.setState({isNeedToWarn: true})
+    evNeedToWarn=(isNeedToWarn)=>{
+        this.setState({isNeedToWarn: isNeedToWarn})
     }
 
     scrollTop = () => {
         window.scrollTo(0, 0);
-        console.log('scroll')
+        // console.log('scroll')
     };
 
 
@@ -68,6 +69,8 @@ class BasketPage extends React.Component{
             window.onbeforeunload = function() {
                 return true;
             };
+        } else {
+            window.onbeforeunload = null
         }
         // console.log(this.state.isNeedToWarn)
         // console.log(this.props.history.location.pathname)
