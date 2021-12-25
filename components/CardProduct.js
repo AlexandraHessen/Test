@@ -7,7 +7,7 @@ import isoFetch from 'isomorphic-fetch';
 import './CardProduct.css'
 
 import { plantsLoadingAC, plantsErrorAC, plantsSetAC } from "../redux/plantsAC"; //action type
-import {add_product, del_product} from '../redux/basketAC';
+import {add_product} from '../redux/basketAC';
 
 class CardProduct extends React.PureComponent {
 
@@ -15,6 +15,11 @@ class CardProduct extends React.PureComponent {
     plants: PropTypes.object.isRequired,  //передано из Redux  (массив с объектами растений)
                                           // this.props.plants.data =  [{…}, {…}, {…}, {…}]
   };
+
+  // state ={
+  //   plantId: 0,
+  //   plantInfo: {}
+  // }
 
   // static propTypes = {
   //   info: PropTypes.shape({
@@ -81,6 +86,11 @@ class CardProduct extends React.PureComponent {
                         console.log(plantInfo)
   }
 
+  // componentWillMount=()=>{
+  //   this.setState({plantId: this.props.match.params.productId})
+  //   let plantInfo=this.props.plants.data.find(plant=>plant.code==this.state.plantId);
+  // }
+
   render() {
 
     // console.log(this.props.plants.data.code)
@@ -94,10 +104,15 @@ class CardProduct extends React.PureComponent {
 
 
 
+    // let plantId=parseInt(this.state.plantId);
     let plantId=parseInt(this.props.match.params.productId);
-      console.log(this.props.plants)
+    let plantInfo=this.props.plants.data.find(plant=>plant.code==plantId);
+
+      // console.log(this.props.plants)
       // console.log(plantArr)
-      let plantInfo=this.props.plants.data.find(plant=>plant.code==plantId);
+
+      
+
       //  let CardProduct=this.props.plants.data.find(plant=>plant.code==plantId);
       return(
           <div className="CardProduct">
@@ -106,7 +121,8 @@ class CardProduct extends React.PureComponent {
                 <h1 className="NameProduct">{plantInfo.name}</h1>
                 <h4 className="Price">{plantInfo.price} руб.</h4>
                 <NavLink to="/basket">
-                    <button type="button" onClick = {this.addProductToBasket(plantId, plantInfo)} className="ButtonToBasket">
+                    {/* <button type="button" onClick = {this.addProductToBasket(plantId, plantInfo)} className="ButtonToBasket"> */}
+                    <button type="button" onClick = {() => this.addProductToBasket(plantId, plantInfo)} className="ButtonToBasket">
                         <i className="fas fa-shopping-cart"></i>
                     </button>
                 </NavLink>
