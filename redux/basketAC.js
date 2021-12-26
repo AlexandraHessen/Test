@@ -2,8 +2,6 @@
 const ADD_PRODUCT = "ADD_PRODUCT"
 const DEL_PRODUCT = "DEL_PRODUCT"
 const CLEAR_BASKET = "CLEAR_BASKET" //пользователь сам очищает корзину при желании
-// const SET_LOCAL_STORAGE = "SET_LOCAL_STORAGE"
-// const CLEAR_PAGE = "CLEAR_PAGE" // очищается страница после оформления заказа
 
 //название action type
 
@@ -11,7 +9,6 @@ const CLEAR_BASKET = "CLEAR_BASKET" //пользователь сам очища
 // называется ActionCreator
 
 const add_product = function(productId, objProductInfo) {
-// const add_product = function(productId, addValue) {
     return {
       type: ADD_PRODUCT,
       productId: productId,
@@ -32,24 +29,8 @@ const add_product = function(productId, objProductInfo) {
     };
   }
 
-  // const set_localStorage = function(productId, objProductInfo) {
-  //   return {
-  //     type: SET_LOCAL_STORAGE,
-  //     productId: productId,
-  //     objProductInfo: objProductInfo
-  //   };
-  // }
-
-  // const clear_page = function() {
-  //   return {
-  //     type: CLEAR_PAGE
-  //   };
-  // }
-
 export {
     add_product, ADD_PRODUCT,
     del_product, DEL_PRODUCT,
     clear_basket, CLEAR_BASKET,
-    // set_localStorage, SET_LOCAL_STORAGE,
-    // clear_page, CLEAR_PAGE
   }
