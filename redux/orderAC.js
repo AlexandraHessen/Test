@@ -7,7 +7,6 @@ const ADD_ORDER = "ADD_ORDER"
 // называется ActionCreator
 
 const add_order = function(objCustomerInfo, objOrderInfo) {
-// const add_product = function(productId, addValue) {
     return {
       type: ADD_ORDER,
       objCustomerInfo: objCustomerInfo,
