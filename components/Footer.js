@@ -7,7 +7,6 @@ import Contacts from './Contacts'
 import './Footer.css'
 
 class Footer extends React.PureComponent {
-    // React.PureComponent
     render(){
         return(
             <footer className="Footer">
@@ -15,10 +14,6 @@ class Footer extends React.PureComponent {
                     <h3>Меню</h3>
                     <MenuPages />
                 </div>
-                {/* <div>
-                    <h3>Каталог</h3>
-                    <CategoryMenu />
-                </div> */}
                 <div>
                     <h3>Контакты</h3>
                     <Contacts />
