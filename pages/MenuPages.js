@@ -8,7 +8,6 @@ class MenuPages extends React.Component{
       // нельзя pure componenet
     render(){
         return(
-            // <div className="MenuPages">
             <ul className="MenuPages">
                 <li><NavLink to="/" exact className="PageLink" activeClassName="ActivePageLink">Главная</NavLink></li>
                 <li><NavLink to="/catalog/1" className="PageLink" activeClassName="ActivePageLink">Каталог</NavLink></li>
