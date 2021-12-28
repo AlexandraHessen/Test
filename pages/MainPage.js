@@ -4,7 +4,6 @@ import { createStore } from 'redux'; // создаем store и привязыв
 import { BrowserRouter } from 'react-router-dom';
 
 import combinedReducer from '../redux/reducers.js'; //combinedReducer файл со всеми Reducer
-import CountriesList from '../components/CountriesList';
 
 import Header from '../components/Header'
 import CategoryMenu from '../components/CategoryMenu'
@@ -38,11 +37,9 @@ class MainPage extends React.PureComponent {
 
             <main className="Main_Container">
               <div className="Nav_Section">
-                {/* <CategoryMenu /> */}
               </div>
               <div className="Content">
                 <RouterPages/>
-                                          {/* <CountriesList /> */}
               </div>
             </main>
 
