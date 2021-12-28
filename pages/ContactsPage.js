@@ -3,8 +3,6 @@ import React from 'react';
 import './ContactsPage.css'
 class ContactsPage extends React.Component{
     render(){
-        console.log("render")
-
         return(
             <div className="ContactsPage">
                 <h1>Контакты</h1>
