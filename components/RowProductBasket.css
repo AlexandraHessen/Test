@@ -6,25 +6,17 @@
 .RowProductBasket .Img{
     width: 180px;
     margin: 20px;
-    /* margin: 15px 35px; */
 }
 
 .RowProductBasket .Name{
     width: 40%;
-    /* margin: 20px; */
 }
-
-/* .RowProductBasket .Count{
-    text-align: center;
-    
-} */
 
 .RowProductBasket .CountInfo{
     width: 60%;
     height: 20px;
     text-align: center;
     border: 1px solid  #969696;
-    /* border: 1px solid  #969696;; */
 }
 
 .RowProductBasket  .DelButton{
@@ -46,9 +38,6 @@
 {
     0% {
         opacity: 1;
-        /* -webkit-transform-origin: -150% -100%; */
-                /* transform-origin: 50% 50%;
-        -webkit-transform: scale(1); */
         transform: translateY(0);
       }
       50%{    opacity: 0.3;
@@ -56,9 +45,6 @@
       }
       100% {
         opacity: 0;
-        /* -webkit-transform-origin: -50% 50%;
-                transform-origin: -50% -50%;
-        -webkit-transform: scale(0.8); */
         transform: translateY(-100%);
       }
 }
