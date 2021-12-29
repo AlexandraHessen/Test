@@ -4,9 +4,6 @@
     margin-bottom: 25px;
 }
 
-/* .TableBasket table{
-    margin: 10px 0 15px 0;
-} */
 .TableBasket tr td{
     padding: 20px 0;
     width: 10%;
@@ -48,9 +45,6 @@
     background-color: #fff;
     font-family: 'Rubik', sans-serif;
     margin: 0 0 25px 20px;
-    /* display: block;
-    margin-left: auto;
-    margin-right: 0; */
 
 }
 
