@@ -1,6 +1,4 @@
 .Contacts{
-    /* display: flex;
-    flex-direction: column; */
     font-weight: bold;
 
 }
@@ -9,8 +7,3 @@
     list-style-type: none;
 }
 
-/* @media all and (max-width: 500px){
-    .Contacts{
-        display: none;
-    }
-} */
