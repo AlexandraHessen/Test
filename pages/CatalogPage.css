@@ -1,10 +1,6 @@
 .CatalogPage{
     padding: 15px;
     background-color: #fff;
-    /* display: flex;
-    column-gap: 3vw;
-    justify-content: space-around; */
-
     display: flex;
     justify-content: start;
     flex-wrap: wrap;
