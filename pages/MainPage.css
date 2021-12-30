@@ -24,7 +24,6 @@ html, body {
 .MainPage .Main_Container{
     display: flex;
     font-family: 'Rubik', sans-serif;
-    /* flex-wrap: wrap; */
     max-width: 1400px;
     min-height: 680px;
     margin: 0 auto 20px;
