@@ -1,8 +1,6 @@
 .CategoryMenu{
-    /* background: rgba(255, 255, 255, 0.3); */
     list-style-type: none;
     max-width: 300px
-    /* width: 25%; */
 }
 
 .CategoryMenu li {
