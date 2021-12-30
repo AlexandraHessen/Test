@@ -1,13 +1,9 @@
 .Footer{
-    /* position:absolute;
-    bottom:0; */
     display: flex;
     justify-content: center;
-    /* border-top: 1px solid #afafaf; */
     width: 100%;
     color: #0a1006;
     font-size: 13px;
-
     backdrop-filter: blur(10px);
     background: #ffffff26;
     padding-bottom: 15px;
@@ -37,8 +33,6 @@
 
 .Footer .CategoryMenu{
     background: none;
-
-    
 }
 
 .Footer .CategoryMenu li{
@@ -52,8 +46,6 @@
 
 .Footer .CategoryMenu{
     background: none;
-
-    
 }
 
 .Footer  .ActivePageLink{
