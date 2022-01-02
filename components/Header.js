@@ -19,7 +19,6 @@ class Header extends React.Component{
                     <div className="Logo">
                         <span>Plants</span>
                         <img src="/img/logo.png" className="ImgLogo"></img>
-                        {/* <img src="../public/img/logo.png" className="ImgLogo"></img> */}
                     </div>
                     <div className='Contacts'>
                         <Contacts />
